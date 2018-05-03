@@ -3,6 +3,7 @@ import time
 from gensim.models import KeyedVectors   
 from collections import defaultdict
 import unicodedata
+import myfuncs
 
 
 input_words=[]
@@ -16,8 +17,8 @@ with open("greek_dict.in") as fileinst:
 j=0
 for i in input_words:
 	try:
-		most_similar=unicodedata.normalize('NFD',(fmodel.most_similar(i)[0][0]).lower())
-		if (distance.levenshtein(unicodedata.normalize('NFD',i.lower()),most_similar)<=1):
+		most_similar=fmodel.most_similar(i)[0][0]
+		if (distance.levenshtein(myfuncs.strip_accents(i),myfuncs.strip_accents(most_similar))==1):
 			print("{} : {}".format(i,most_similar),flush=True)
 	except:
 		j+=1
