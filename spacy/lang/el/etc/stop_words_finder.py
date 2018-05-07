@@ -13,13 +13,6 @@ wiki = WikiCorpus("elwiki-latest-pages-articles.xml.bz2",lemmatize=False, dictio
 # english language about 300 stop-words.
 num_of_words=350
 my_dict=defaultdict(int)
-# with open("text.in") as fileinst:
-# 	for line in fileinst:
-# 		# keep only alphanumeric characters
-# 		processed_line=list(re.sub(r'[^\w]',' ',line).lower().split())
-# 		for k in processed_line:
-# 			my_dict[k]+=1
-
 sentences = list(wiki.get_texts())
 for sentence in sentences:
 	for word in sentence:
