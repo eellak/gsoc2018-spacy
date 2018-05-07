@@ -407,6 +407,7 @@ _exc={
 
 }
 
-BASE_NORMS = {
-   
-}
+NORM_EXCEPTIONS = {}
+
+for string, norm in _exc.items():
+    NORM_EXCEPTIONS[string] = norm
