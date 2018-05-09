@@ -14,7 +14,7 @@ We live in the era of data. **Every minute**, 3.8 billion internet users, produc
 This project is about improving the quality of Natural Language Processing of Greek Language. The first step is to integrate Greek Language to spaCy. During that process, innovative approaches will be used. It is of vital importance for the writer and for the mentors of the program to identify which of them are of practical use for spaCy and to share the results in order to support any other open source enthusiast who is interested. In the fortunate scenario of successful integration of Greek Language to spaCy, the greek model will be trained and used for extraction of valuable information such as emotions detection in Greek texts, entity extraction, etc.
 
 ## Licensing
-For this project, GNU GPLv3 license is adopted.
+The project is forked from spaCy.io so it uses MIT License.
 
 ## People
 
