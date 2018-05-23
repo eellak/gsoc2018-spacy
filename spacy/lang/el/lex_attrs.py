@@ -35,5 +35,6 @@ def has_accents(text):
 # so only the functions defined here are overwritten.
 
 LEX_ATTRS = {
-    LIKE_NUM: like_num
+    LIKE_NUM: like_num,
+    # HAS_ACCENTS: has_accents
 }
