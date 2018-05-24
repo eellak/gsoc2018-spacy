@@ -5,10 +5,21 @@ from ...symbols import PUNCT, NUM, AUX, X, CONJ, ADJ, VERB, PART, SPACE, CCONJ
 
 
 
-# mapping of language individual tags to universal tags
-# Optionally, you can also include morphological features or other attributes.
-
-
 TAG_MAP = {
-
+	"ADJ": {POS: ADJ},
+	"ADV": {POS: ADV},
+	"INTJ": {POS: INTJ},
+	"NOUN": {POS: NOUN},
+	"PROPN": {POS: PROPN},
+	"VERB": {POS: VERB},
+	"ADP": {POS: ADP},
+	"CCONJ": {POS: CCONJ},
+	"SCONJ": {POS: SCONJ},
+	"PART": {POS: PART},
+	"PUNCT": {POS: PUNCT},
+	"SYM": {POS: SYM},
+	"NUM": {POS: NUM},
+	"PRON": {POS: PRON},
+	"AUX": {POS: AUX},
+	"SPACE": {POS: SPACE},
 }
