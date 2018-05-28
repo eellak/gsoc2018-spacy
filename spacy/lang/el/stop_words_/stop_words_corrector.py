@@ -1,7 +1,10 @@
 from collections import defaultdict
+import sys
+sys.path.insert(0,"../etc/");
 import myfuncs
+
 all_words=defaultdict(lambda: '')
-with open("greek_dict.in") as fileinst:
+with open("../etc/greek_dict.in") as fileinst:
 	for line in fileinst:
 		all_words[myfuncs.strip_accents(line.rstrip())]=line.rstrip()
 out=defaultdict(lambda:'')

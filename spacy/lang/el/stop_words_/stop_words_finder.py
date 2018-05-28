@@ -2,13 +2,15 @@ import re
 import operator
 from collections import defaultdict
 import unicodedata
+import sys
+sys.path.insert(0,"../etc");
 import myfuncs
 import logging
 from gensim.corpora import WikiCorpus, MmCorpus
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
-wiki = WikiCorpus("elwiki-latest-pages-articles.xml.bz2",lemmatize=False, dictionary={})
+wiki = WikiCorpus("../etc/elwiktionary-latest-pages-articles.xml.bz2",lemmatize=False, dictionary={})
 
 # english language about 300 stop-words.
 num_of_words=350
