@@ -31,7 +31,7 @@ for key,value in stemms.items():
 		if (lemmas[j]!="null"):
 			found=j
 			break
-	if (found==0):
+	if (found==0 or found=='ΕΔΕΣ'):
 		not_matched.append(key)
 	else:
 		for j in value:
@@ -40,7 +40,7 @@ for key,value in stemms.items():
 
 with open('matched.txt','a') as fileinst:
 	for x in matched:
-		fileinst.write("\"{}\":\"{}\"".format(x[0],x[1]))
+		fileinst.write("\"{}\":\"{}\",".format(x[0],x[1]))
 		fileinst.write("\n")
 
 with open('not_matched.txt','a') as fileinst:
