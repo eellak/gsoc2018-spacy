@@ -6,7 +6,7 @@ from lemmatizer import LOOKUP
 
 # Model wiki.el.vec.bin can be downloaded from:
 # https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md
-model=FastText.load_fasttext_format('wiki.el.vec.bin')
+model=FastText.load_fasttext_format('wiki.el.bin')
 
 
 class Relation:
@@ -29,7 +29,7 @@ def lemmatizer(word):
 		objects_seq.sort(key=lambda x: x.distance)
 		for i in objects_seq:
 			try:
-				res=LOOKUP[i]
+				res=LOOKUP[i.word]
 				return res
 			except:
 				pass
