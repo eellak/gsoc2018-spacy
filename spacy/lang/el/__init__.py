@@ -11,8 +11,8 @@ from .norm_exceptions import NORM_EXCEPTIONS
 from ..tokenizer_exceptions import BASE_EXCEPTIONS
 from ..norm_exceptions import BASE_NORMS
 from ...language import Language
-from ...attrs import LANG
-from ...util import update_exc
+from ...attrs import LANG, NORM
+from ...util import update_exc, add_lookups
 
 class GreekDefaults(Language.Defaults):
     lex_attr_getters = dict(Language.Defaults.lex_attr_getters)
