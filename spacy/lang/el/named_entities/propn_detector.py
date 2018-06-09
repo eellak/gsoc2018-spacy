@@ -5,7 +5,7 @@ from gensim.corpora import WikiCorpus, MmCorpus
 nlp=el_unnamed.load()
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-wiki = WikiCorpus("../etc/elwiktionary-latest-pages-articles.xml.bz2",lemmatize=False, dictionary={})
+wiki = WikiCorpus("../etc/elwiki-latest-pages-articles.xml.bz2",lemmatize=False, dictionary={})
 sentences = wiki.get_texts()
 counter=0
 for sentence in sentences:
