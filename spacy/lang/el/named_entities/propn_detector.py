@@ -1,8 +1,8 @@
 import spacy
+import el_unnamed
 import logging
 from gensim.corpora import WikiCorpus, MmCorpus
-nlp=spacy.load('el_unnamed')
-
+nlp=el_unnamed.load()
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 wiki = WikiCorpus("../etc/elwiktionary-latest-pages-articles.xml.bz2",lemmatize=False, dictionary={})
