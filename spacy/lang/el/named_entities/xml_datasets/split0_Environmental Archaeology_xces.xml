@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:tcas="http:///uima/tcas.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore" xmlns:types="http:///gr/ilsp/types.ecore" xmlns:ace="http:///gr/ilsp/types/ace.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <cas:Sofa xmi:id="1" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString=""/>
+    <tcas:DocumentAnnotation xmi:id="8" sofa="1" begin="0" end="0" language="x-unspecified"/>
+    <cas:View sofa="1" members="8"/>
+</xmi:XMI>
