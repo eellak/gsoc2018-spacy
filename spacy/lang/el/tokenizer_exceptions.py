@@ -1,21 +1,30 @@
 # coding: utf8
 from __future__ import unicode_literals
-
-# import symbols – if you need to use more, add them here
 from ...symbols import ORTH, LEMMA, TAG, NORM, ADP, DET
+import pickle
 
-
-# Add tokenizer exceptions
-# If an exception is split into more than one token, the ORTH values combined always
-# need to match the original string.
-
-# Exceptions should be added in the following format:
+def load_pickle(file_path):
+    # load file
+    with open(file_path, 'rb') as f:
+        return pickle.load(f)
+verbs = load_pickle('etc/elwiktionary_verbs.pkl')
 
 _exc = {
-    "don't": [
-        {ORTH: "do", LEMMA: "do"},
-        {ORTH: "n't", LEMMA: "not", TAG: "RB"}]
+
 }
+
+
+# norms
+
+
+
+
+
+# abbreviations
+for orth in ['χλμ.','σ.','π.μ.','μ.μ.','π.Χ.','μ.Χ.','δηλ.',
+	'τ.μ.','κ.ο.κ','κ.λπ.','κ.α.','κ.ά','κ.κ','αγγλ.','λ.χ.',
+	'κυβ.','κλπ.','κ.','α.α','βλ.','δισ.']:
+    _exc[orth] = [{ORTH: orth}]
 
 
 
