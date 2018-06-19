@@ -30,5 +30,5 @@ sorted_words_list=sorted(word_times.items(),key=operator.itemgetter(1),reverse=T
 for i in sorted_words_list:
 	curr_key=i[0]
 	if (len(curr_key)>1):
-		print("{} {} {}".format(word_times[curr_key],word_documents[curr_key],curr_key))
+		print("{} {} \'{}\'".format(word_times[curr_key],word_documents[curr_key],myfuncs.get_accent(curr_key)))
 
