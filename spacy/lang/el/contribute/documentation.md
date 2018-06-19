@@ -12,6 +12,15 @@ Except from the requirements that are in spaCy /requirements.txt file, there are
 1. gensim
 
 
+## Steps
+
+For this section we assume that the root folder is gsoc2018-spacy/spacy/lang/el.
+
+1. cd etc/
+2. wget https://dumps.wikimedia.org/elwiki/latest/elwiki-latest-pages-articles.xml.bz2
+
+
+
 
 
 

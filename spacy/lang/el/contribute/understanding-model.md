@@ -113,5 +113,14 @@ Ner supports the following tags:
 45. XCOMP: Open clausal complement
 
 
+## Understanding project structure
+
+### Stop-words
+
+
+1. global-freqs/ : Contains code and out files needed for creating nlp vocab.
+
+
+
 
 
