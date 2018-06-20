@@ -10,7 +10,7 @@ from gensim.corpora import WikiCorpus, MmCorpus
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
-wiki = WikiCorpus("../etc/elwiki-latest-pages-articles.xml.bz2",lemmatize=False, dictionary={})
+wiki = WikiCorpus("../res/elwiki-latest-pages-articles.xml.bz2",lemmatize=False, dictionary={})
 
 
 word_times=defaultdict(int) # number of times each word occurs
