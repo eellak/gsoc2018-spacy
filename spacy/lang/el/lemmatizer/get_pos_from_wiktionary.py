@@ -18,8 +18,17 @@ unwanted_parts = '''
 '''
 
 
-wiktionary_file_path = 'elwiktionary-latest-pages-articles.xml'
+wiktionary_file_path = '../res/elwiktionary-latest-pages-articles.xml'
 
+proper_names_dict={
+    'ουσιαστικό':'nouns',
+    'επίθετο':'adjectives',
+    'άρθρο':'dets',
+    'επίρρημα':'adverbs',
+    'κύριο όνομα': 'proper_names',
+    'μετοχή': 'participles',
+    'ρήμα': 'verbs'
+}
 expected_parts_dict = {}
 for expected_part in expected_parts:
     expected_parts_dict[expected_part] = []
@@ -37,9 +46,11 @@ for title, text, pageid in extract_pages(wiktionary_file_path):
 
 
 for i in expected_parts_dict:
-    with open('{0}.txt'.format(i), 'w') as f:
+    with open('_{0}.py'.format(proper_names_dict[i]), 'w') as f:
+        f.write('from __future__ import unicode_literals\n')
+        f.write('{} = set(\"\"\"\n'.format(proper_names_dict[i].upper()))
         f.write(' '.join(sorted(expected_parts_dict[i])))
+        f.write('\n\"\"\".split())')
 
 
 
-# Note1: you might want to have a look on the unwanted_parts and concatenate results - eg 'μορφή επιθέτου' to επίθετο , 'μορφή ρήματος' to 'ρήμα' etc
