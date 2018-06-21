@@ -1,5 +1,6 @@
 //- 💫 INCLUDES > SCRIPTS
 
+<<<<<<< HEAD
 if quickstart
     script(src="/assets/js/vendor/quickstart.min.js")
 
@@ -19,17 +20,39 @@ script
         | new Quickstart("#qs");
 
     if environment == "deploy"
+=======
+- scripts = ["vendor/prism.min", "vendor/vue.min"]
+- if (SECTION == "universe") scripts.push("vendor/vue-markdown.min")
+- if (quickstart) scripts.push("vendor/quickstart.min")
+- if (IS_PAGE) scripts.push("vendor/in-view.min")
+- if (IS_PAGE || SECTION == "index") scripts.push("vendor/juniper.min")
+
+for script in scripts
+    script(src="/assets/js/" + script + ".js")
+script(src="/assets/js/main.js?v#{V_JS}" type=(environment == "deploy") ? null : "module")
+
+if environment == "deploy"
+    script(src="https://www.google-analytics.com/analytics.js", async)
+    script
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         | window.ga=window.ga||function(){
         | (ga.q=ga.q||[]).push(arguments)}; ga.l=+new Date;
         | ga('create', '#{ANALYTICS}', 'auto'); ga('send', 'pageview');
 
+<<<<<<< HEAD
     if IS_PAGE
+=======
+if IS_PAGE
+    script(src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer)
+    script
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         | ((window.gitter = {}).chat = {}).options = {
         |     useStyles: false,
         |     activationElement: '.js-gitter-button',
         |     targetElement: '.js-gitter',
         |     room: '!{SOCIAL.gitter}'
         | };
+<<<<<<< HEAD
 
 if IS_PAGE
     script(src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer)
@@ -84,3 +107,5 @@ else
         if compare_models
             | import { ModelComparer } from '/assets/js/models.js';
             !=ModelComparer
+=======
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c

@@ -33,6 +33,7 @@ try:
 except ImportError:
     from thinc.neural.optimizers import Adam as Optimizer
 
+<<<<<<< HEAD
 try:
     import urllib.request
 except ImportError:
@@ -43,6 +44,8 @@ try:
 except ImportError:
     from urllib2 import HTTPError
 
+=======
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 pickle = pickle
 copy_reg = copy_reg
 CudaStream = CudaStream
@@ -66,7 +69,10 @@ if is_python2:
     input_ = raw_input  # noqa: F821
     json_dumps = lambda data: ujson.dumps(data, indent=2, escape_forward_slashes=False).decode('utf8')
     path2str = lambda path: str(path).decode('utf8')
+<<<<<<< HEAD
     url_open = urllib.urlopen
+=======
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 elif is_python3:
     bytes_ = bytes
@@ -75,6 +81,7 @@ elif is_python3:
     input_ = input
     json_dumps = lambda data: ujson.dumps(data, indent=2, escape_forward_slashes=False)
     path2str = lambda path: str(path)
+<<<<<<< HEAD
     url_open = urllib.request.urlopen
 
 
@@ -85,6 +92,8 @@ def url_read(url):
         raise HTTPError(url, code, "Cannot GET url", [], file_)
     data = file_.read()
     return data
+=======
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 
 def b_to_str(b_str):
@@ -109,11 +118,19 @@ def symlink_to(orig, dest):
 
 
 def is_config(python2=None, python3=None, windows=None, linux=None, osx=None):
+<<<<<<< HEAD
     return ((python2 is None or python2 == is_python2) and
             (python3 is None or python3 == is_python3) and
             (windows is None or windows == is_windows) and
             (linux is None or linux == is_linux) and
             (osx is None or osx == is_osx))
+=======
+    return (python2 in (None, is_python2) and
+            python3 in (None, is_python3) and
+            windows in (None, is_windows) and
+            linux in (None, is_linux) and
+            osx in (None, is_osx))
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 
 def normalize_string_keys(old):

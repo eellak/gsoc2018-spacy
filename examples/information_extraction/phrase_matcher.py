@@ -34,6 +34,13 @@ formatted in jsonl as a sequence of entries like this:
 {"text":"Appalachia"}
 {"text":"Argentina"}
 
+<<<<<<< HEAD
+=======
+Reddit comments corpus:
+* https://files.pushshift.io/reddit/
+* https://archive.org/details/2015_reddit_comments_corpus
+
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 Compatible with: spaCy v2.0.0+
 """
 from __future__ import print_function, unicode_literals, division

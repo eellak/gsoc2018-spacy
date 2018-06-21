@@ -36,6 +36,15 @@ cdef class Span:
     def has_extension(cls, name):
         return name in Underscore.span_extensions
 
+<<<<<<< HEAD
+=======
+    @classmethod
+    def remove_extension(cls, name):
+        if not cls.has_extension(name):
+            raise ValueError(Errors.E046.format(name=name))
+        return Underscore.span_extensions.pop(name)
+
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     def __cinit__(self, Doc doc, int start, int end, attr_t label=0,
                   vector=None, vector_norm=None):
         """Create a `Span` object from the slice `doc[start : end]`.

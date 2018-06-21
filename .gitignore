@@ -100,6 +100,7 @@ Desktop.ini
 
 # Pycharm project files
 *.idea
+<<<<<<< HEAD
 
 
 .appveyor.yml
@@ -108,3 +109,5 @@ Desktop.ini
 .travis.yml
 
 
+=======
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c

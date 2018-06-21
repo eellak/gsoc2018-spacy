@@ -28,6 +28,11 @@ acestia
 acestui
 aceşti
 aceştia
+<<<<<<< HEAD
+=======
+acești
+aceștia
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 acolo
 acord
 acum
@@ -51,6 +56,10 @@ altfel
 alti
 altii
 altul
+<<<<<<< HEAD
+=======
+alături
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 am
 anume
 apoi
@@ -80,11 +89,21 @@ au
 avea
 avem
 aveţi
+<<<<<<< HEAD
+=======
+aveți
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 avut
 azi
 aş
 aşadar
 aţi
+<<<<<<< HEAD
+=======
+aș
+așadar
+ați
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 b
 ba
 bine
@@ -136,11 +155,19 @@ cât
 câte
 câtva
 câţi
+<<<<<<< HEAD
+=======
+câți
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 cînd
 cît
 cîte
 cîtva
 cîţi
+<<<<<<< HEAD
+=======
+cîți
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 că
 căci
 cărei
@@ -167,6 +194,10 @@ departe
 desi
 despre
 deşi
+<<<<<<< HEAD
+=======
+deși
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 din
 dinaintea
 dintr
@@ -191,6 +222,10 @@ este
 eu
 exact
 eşti
+<<<<<<< HEAD
+=======
+ești
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 f
 face
 fara
@@ -203,6 +238,10 @@ fii
 fim
 fiu
 fiţi
+<<<<<<< HEAD
+=======
+fiți
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 foarte
 fost
 frumos
@@ -210,6 +249,10 @@ fără
 g
 geaba
 graţie
+<<<<<<< HEAD
+=======
+grație
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 h
 halbă
 i
@@ -259,6 +302,11 @@ multi
 multă
 mulţi
 mulţumesc
+<<<<<<< HEAD
+=======
+mulți
+mulțumesc
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 mâine
 mîine
 mă
@@ -274,6 +322,10 @@ nimeri
 nimic
 niste
 nişte
+<<<<<<< HEAD
+=======
+niște
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 noastre
 noastră
 noi
@@ -284,6 +336,10 @@ nou
 noua
 nouă
 noştri
+<<<<<<< HEAD
+=======
+noștri
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 nu
 numai
 o
@@ -322,6 +378,12 @@ putini
 puţin
 puţina
 puţină
+<<<<<<< HEAD
+=======
+puțin
+puțina
+puțină
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 până
 pînă
 r
@@ -343,11 +405,19 @@ sub
 sunt
 suntem
 sunteţi
+<<<<<<< HEAD
+=======
+sunteți
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 sus
 sută
 sînt
 sîntem
 sînteţi
+<<<<<<< HEAD
+=======
+sînteți
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 să
 săi
 său
@@ -367,7 +437,13 @@ toti
 totul
 totusi
 totuşi
+<<<<<<< HEAD
 toţi
+=======
+totuși
+toţi
+toți
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 trei
 treia
 treilea
@@ -404,6 +480,10 @@ vor
 vostru
 vouă
 voştri
+<<<<<<< HEAD
+=======
+voștri
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 vreme
 vreo
 vreun
@@ -428,15 +508,32 @@ zice
 întrucât
 întrucît
 îţi
+<<<<<<< HEAD
+=======
+îți
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 ăla
 ălea
 ăsta
 ăstea
 ăştia
+<<<<<<< HEAD
+=======
+ăștia
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 şapte
 şase
 şi
 ştiu
 ţi
 ţie
+<<<<<<< HEAD
+=======
+șapte
+șase
+și
+știu
+ți
+ție
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 """.split())

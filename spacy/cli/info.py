@@ -13,8 +13,14 @@ from .. import about
 
 @plac.annotations(
     model=("optional: shortcut link of model", "positional", None, str),
+<<<<<<< HEAD
     markdown=("generate Markdown for GitHub issues", "flag", "md", str))
 def info(model=None, markdown=False):
+=======
+    markdown=("generate Markdown for GitHub issues", "flag", "md", str),
+    silent=("don't print anything (just return)", "flag", "s"))
+def info(model=None, markdown=False, silent=False):
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     """Print info about spaCy installation. If a model shortcut link is
     speficied as an argument, print model information. Flag --markdown
     prints details in Markdown for easy copy-pasting to GitHub issues.
@@ -33,6 +39,7 @@ def info(model=None, markdown=False):
             meta['source'] = path2str(model_path.resolve())
         else:
             meta['source'] = path2str(model_path)
+<<<<<<< HEAD
         print_info(meta, 'model %s' % model, markdown)
     else:
         data = {'spaCy version': about.__version__,
@@ -41,6 +48,19 @@ def info(model=None, markdown=False):
                 'Python version': platform.python_version(),
                 'Models': list_models()}
         print_info(data, 'spaCy', markdown)
+=======
+        if not silent:
+            print_info(meta, 'model %s' % model, markdown)
+        return meta
+    data = {'spaCy version': about.__version__,
+            'Location': path2str(Path(__file__).parent.parent),
+            'Platform': platform.platform(),
+            'Python version': platform.python_version(),
+            'Models': list_models()}
+    if not silent:
+        print_info(data, 'spaCy', markdown)
+    return data
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 
 def print_info(data, title, markdown):

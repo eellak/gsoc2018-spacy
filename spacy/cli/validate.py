@@ -5,9 +5,16 @@ import pkg_resources
 from pathlib import Path
 import sys
 import ujson
+<<<<<<< HEAD
 
 from ._messages import Messages
 from ..compat import path2str, locale_escape, url_read, HTTPError
+=======
+import requests
+
+from ._messages import Messages
+from ..compat import path2str, locale_escape
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 from ..util import prints, get_data_path, read_json
 from .. import about
 
@@ -16,12 +23,20 @@ def validate():
     """Validate that the currently installed version of spaCy is compatible
     with the installed models. Should be run after `pip install -U spacy`.
     """
+<<<<<<< HEAD
     try:
         data = url_read(about.__compatibility__)
     except HTTPError as e:
         title = Messages.M003.format(code=e.code, desc=e.reason)
         prints(Messages.M021, title=title, exits=1)
     compat = ujson.loads(data)['spacy']
+=======
+    r = requests.get(about.__compatibility__)
+    if r.status_code != 200:
+        prints(Messages.M021, title=Messages.M003.format(code=r.status_code),
+               exits=1)
+    compat = r.json()['spacy']
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     current_compat = compat.get(about.__version__)
     if not current_compat:
         prints(about.__compatibility__, exits=1,

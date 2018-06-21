@@ -15,11 +15,21 @@ from .. import util
 # here if it's using spaCy's tokenizer (not a different library)
 # TODO: re-implement generic tokenizer tests
 _languages = ['bn', 'da', 'de', 'en', 'es', 'fi', 'fr', 'ga', 'he', 'hu', 'id',
+<<<<<<< HEAD
               'it', 'nb', 'nl', 'pl', 'pt', 'ru', 'sv', 'tr', 'xx']
 _models = {'en': ['en_core_web_sm'],
            'de': ['de_core_news_md'],
            'fr': ['fr_core_news_sm'],
            'xx': ['xx_ent_web_md'],
+=======
+              'it', 'nb', 'nl', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'ar', 'tt',
+              'xx']
+
+_models = {'en': ['en_core_web_sm'],
+           'de': ['de_core_news_sm'],
+           'fr': ['fr_core_news_sm'],
+           'xx': ['xx_ent_web_sm'],
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
            'en_core_web_md': ['en_core_web_md'],
            'es_core_news_md': ['es_core_news_md']}
 
@@ -50,8 +60,13 @@ def RU(request):
 
 #@pytest.fixture(params=_languages)
 #def tokenizer(request):
+<<<<<<< HEAD
     #lang = util.get_lang_class(request.param)
     #return lang.Defaults.create_tokenizer()
+=======
+#lang = util.get_lang_class(request.param)
+#return lang.Defaults.create_tokenizer()
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 
 @pytest.fixture
@@ -101,6 +116,14 @@ def fi_tokenizer():
 
 
 @pytest.fixture
+<<<<<<< HEAD
+=======
+def ro_tokenizer():
+    return util.get_lang_class('ro').Defaults.create_tokenizer()
+
+
+@pytest.fixture
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 def id_tokenizer():
     return util.get_lang_class('id').Defaults.create_tokenizer()
 
@@ -135,10 +158,16 @@ def da_tokenizer():
 
 @pytest.fixture
 def ja_tokenizer():
+<<<<<<< HEAD
     janome = pytest.importorskip("janome")
     return util.get_lang_class('ja').Defaults.create_tokenizer()
 
 
+=======
+    janome = pytest.importorskip("MeCab")
+    return util.get_lang_class('ja').Defaults.create_tokenizer()
+
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 @pytest.fixture
 def th_tokenizer():
     pythainlp = pytest.importorskip("pythainlp")
@@ -148,6 +177,16 @@ def th_tokenizer():
 def tr_tokenizer():
     return util.get_lang_class('tr').Defaults.create_tokenizer()
 
+<<<<<<< HEAD
+=======
+@pytest.fixture
+def tt_tokenizer():
+    return util.get_lang_class('tt').Defaults.create_tokenizer()
+
+@pytest.fixture
+def ar_tokenizer():
+    return util.get_lang_class('ar').Defaults.create_tokenizer()
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 @pytest.fixture
 def ru_tokenizer():
@@ -162,7 +201,11 @@ def stringstore():
 
 @pytest.fixture
 def en_entityrecognizer():
+<<<<<<< HEAD
      return util.get_lang_class('en').Defaults.create_entity()
+=======
+    return util.get_lang_class('en').Defaults.create_entity()
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 
 @pytest.fixture
@@ -177,11 +220,19 @@ def text_file_b():
 
 def pytest_addoption(parser):
     parser.addoption("--models", action="store_true",
+<<<<<<< HEAD
         help="include tests that require full models")
     parser.addoption("--vectors", action="store_true",
         help="include word vectors tests")
     parser.addoption("--slow", action="store_true",
         help="include slow tests")
+=======
+                     help="include tests that require full models")
+    parser.addoption("--vectors", action="store_true",
+                     help="include word vectors tests")
+    parser.addoption("--slow", action="store_true",
+                     help="include slow tests")
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
     for lang in _languages + ['all']:
         parser.addoption("--%s" % lang, action="store_true", help="Use %s models" % lang)

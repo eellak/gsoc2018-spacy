@@ -195,7 +195,12 @@ def setup_package():
                 'pathlib',
                 'ujson>=1.35',
                 'dill>=0.2,<0.3',
+<<<<<<< HEAD
                 'regex==2017.4.5'],
+=======
+                'regex==2017.4.5',
+                'requests>=2.13.0,<3.0.0'],
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
             classifiers=[
                 'Development Status :: 5 - Production/Stable',
                 'Environment :: Console',

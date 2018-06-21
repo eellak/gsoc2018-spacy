@@ -41,6 +41,15 @@ cdef class Token:
     def has_extension(cls, name):
         return name in Underscore.token_extensions
 
+<<<<<<< HEAD
+=======
+    @classmethod
+    def remove_extension(cls, name):
+        if not cls.has_extension(name):
+            raise ValueError(Errors.E046.format(name=name))
+        return Underscore.token_extensions.pop(name)
+
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     def __cinit__(self, Vocab vocab, Doc doc, int offset):
         """Construct a `Token` object.
 
@@ -149,7 +158,11 @@ cdef class Token:
         """
         if 'similarity' in self.doc.user_token_hooks:
             return self.doc.user_token_hooks['similarity'](self)
+<<<<<<< HEAD
         if hasattr(other, '__len__') and len(other) == 1:
+=======
+        if hasattr(other, '__len__') and len(other) == 1 and hasattr(other, "__getitem__"):
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
             if self.c.lex.orth == getattr(other[0], 'orth', None):
                 return 1.0
         elif hasattr(other, 'orth'):

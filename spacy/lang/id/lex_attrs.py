@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from ...attrs import LIKE_NUM
 
 
+<<<<<<< HEAD
 _num_words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
               'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
               'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty',
@@ -17,6 +18,12 @@ _num_words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
               'ribu', 'rb', 'juta', 'jt', 'miliar', 'biliun', 'triliun',
               'kuadriliun', 'kuintiliun', 'sekstiliun', 'septiliun', 'oktiliun',
               'noniliun', 'desiliun']
+=======
+_num_words = ['nol', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh',
+              'delapan', 'sembilan', 'sepuluh', 'sebelas', 'belas', 'puluh',
+              'ratus', 'ribu', 'juta', 'miliar', 'biliun', 'triliun', 'kuadriliun',
+              'kuintiliun', 'sekstiliun', 'septiliun', 'oktiliun', 'noniliun', 'desiliun']
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 
 def like_num(text):

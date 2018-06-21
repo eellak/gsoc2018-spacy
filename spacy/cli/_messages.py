@@ -7,7 +7,11 @@ class Messages(object):
     M002 = ("Creating a shortcut link for 'en' didn't work (maybe you "
             "don't have admin permissions?), but you can still load the "
             "model via its full package name: nlp = spacy.load('{name}')")
+<<<<<<< HEAD
     M003 = ("Server error ({code}: {desc})")
+=======
+    M003 = ("Server error ({code})")
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     M004 = ("Couldn't fetch {desc}. Please find a model for your spaCy "
             "installation (v{version}), and download it manually. For more "
             "details, see the documentation: https://spacy.io/usage/models")

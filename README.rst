@@ -49,7 +49,11 @@ integration. It's commercial open-source software, released under the MIT licens
 `New in v2.0`_       New features, backwards incompatibilities and migration guide.
 `API Reference`_     The detailed reference for spaCy's API.
 `Models`_            Download statistical language models for spaCy.
+<<<<<<< HEAD
 `Resources`_         Libraries, extensions, demos, books and courses.
+=======
+`Universe`_          Libraries, extensions, demos, books and courses.
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 `Changelog`_         Changes and version history.
 `Contribute`_        How to contribute to the spaCy project and code base.
 ===================  ===
@@ -59,7 +63,11 @@ integration. It's commercial open-source software, released under the MIT licens
 .. _Usage Guides: https://spacy.io/usage/
 .. _API Reference: https://spacy.io/api/
 .. _Models: https://spacy.io/models
+<<<<<<< HEAD
 .. _Resources: https://spacy.io/usage/resources
+=======
+.. _Universe: https://spacy.io/universe
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 .. _Changelog: https://spacy.io/usage/#changelog
 .. _Contribute: https://github.com/explosion/spaCy/blob/master/CONTRIBUTING.md
 
@@ -199,6 +207,14 @@ or manually by pointing pip to a path or URL.
     # pip install .tar.gz archive from path or URL
     pip install /Users/you/en_core_web_sm-2.0.0.tar.gz
 
+<<<<<<< HEAD
+=======
+If you have SSL certification problems, SSL customization options are described in the help:
+
+    # help for the download command
+    python -m spacy download --help
+
+>>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 Loading and using models
 ------------------------
 
