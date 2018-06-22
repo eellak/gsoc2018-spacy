@@ -24,6 +24,9 @@ class GreekDefaults(Language.Defaults):
     tag_map= TAG_MAP
     stop_words = STOP_WORDS
     lemma_lookup= LOOKUP
+    lemma_rules = LEMMA_RULES
+    lemma_index = LEMMA_INDEX
+    lemma_exc = LEMMA_EXC
     morph_rules = MORPH_RULES
     syntax_iterators = SYNTAX_ITERATORS
 
