@@ -16,6 +16,7 @@ from .. import util
 # TODO: re-implement generic tokenizer tests
 _languages = ['bn', 'da', 'de', 'en', 'es', 'fi', 'fr', 'ga', 'he', 'hu', 'id',
 <<<<<<< HEAD
+<<<<<<< HEAD
               'it', 'nb', 'nl', 'pl', 'pt', 'ru', 'sv', 'tr', 'xx']
 _models = {'en': ['en_core_web_sm'],
            'de': ['de_core_news_md'],
@@ -23,6 +24,9 @@ _models = {'en': ['en_core_web_sm'],
            'xx': ['xx_ent_web_md'],
 =======
               'it', 'nb', 'nl', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'ar', 'tt',
+=======
+              'it', 'nb', 'nl', 'pl', 'pt', 'ro', 'ru', 'sv', 'tr', 'ar', 'ut', 'tt',
+>>>>>>> f33c70306688b49e87dd213ef7593b29fa5080e3
               'xx']
 
 _models = {'en': ['en_core_web_sm'],
@@ -187,6 +191,10 @@ def tt_tokenizer():
 def ar_tokenizer():
     return util.get_lang_class('ar').Defaults.create_tokenizer()
 >>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
+
+@pytest.fixture
+def ur_tokenizer():
+    return util.get_lang_class('ur').Defaults.create_tokenizer()
 
 @pytest.fixture
 def ru_tokenizer():
