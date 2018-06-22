@@ -1,12 +1,7 @@
 {
     "sidebar": {
         "Models": {
-<<<<<<< HEAD
-            "Overview": "./",
-            "Comparison": "comparison"
-=======
             "Overview": "./"
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         },
 
         "Language models": {
@@ -76,12 +71,8 @@
         "vecs": "Word vectors included in the model. Models that only support context vectors compute similarity via the tensors shared with the pipeline.",
         "benchmark_parser": "Syntax accuracy",
         "benchmark_ner": "NER accuracy",
-<<<<<<< HEAD
-        "benchmark_speed": "Speed"
-=======
         "benchmark_speed": "Speed",
         "compat": "Latest compatible model version for your spaCy installation"
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     },
 
     "MODEL_LICENSES": {
@@ -101,14 +92,11 @@
         "ner":    { "ents_f": "NER F", "ents_p": "NER P", "ents_r": "NER R" }
     },
 
-<<<<<<< HEAD
-=======
     "EXAMPLE_SENT_LANGS": [
         "da", "de", "en", "es", "fa", "fr", "he", "hi", "hu", "id", "it", "ja",
         "nb", "nl", "pl", "pt", "ru", "sv", "tr", "zh"
     ],
 
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     "LANGUAGES": {
         "en": "English",
         "de": "German",

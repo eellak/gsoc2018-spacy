@@ -19,24 +19,15 @@ include _install-basics
 +h(3, "download-pip") Installation via pip
 
 p
-<<<<<<< HEAD
-    | To download a model directly using #[+a("https://pypi.python.org/pypi/pip") pip],
-    |  simply point #[code pip install] to the URL or local path of the archive
-=======
     |  To download a model directly using #[+a("https://pypi.python.org/pypi/pip") pip],
     |  point #[code pip install] to the URL or local path of the archive
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     |  file. To find the direct link to a model, head over to the
     |  #[+a(gh("spacy-models") + "/releases") model releases], right click on the archive
     |  link and copy it to your clipboard.
 
 +code(false, "bash").
     # with external URL
-<<<<<<< HEAD
-    pip install #{gh("spacy-models")}/releases/download/en_core_web_md-1.2.0/en_core_web_md-1.2.0.tar.gz
-=======
     pip install #{gh("spacy-models")}/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
     # with local file
     pip install /Users/you/en_core_web_md-1.2.0.tar.gz
@@ -78,11 +69,7 @@ p
 
 p
     |  You can place the #[strong model package directory] anywhere on your
-<<<<<<< HEAD
-    |  local file system. To use it with spaCy, simply assign it a name by
-=======
     |  local file system. To use it with spaCy, assign it a name by
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     |  creating a #[+a("#usage") shortcut link] for the data directory.
 
 +h(3, "usage") Using models with spaCy
@@ -160,17 +147,10 @@ p
     |  you can also #[code import] it and then call its #[code load()] method
     |  with no arguments:
 
-<<<<<<< HEAD
-+code.
-    import en_core_web_md
-
-    nlp = en_core_web_md.load()
-=======
 +code-exec.
     import en_core_web_sm
 
     nlp = en_core_web_sm.load()
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     doc = nlp(u'This is a sentence.')
 
 p

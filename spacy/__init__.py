@@ -20,10 +20,5 @@ def blank(name, **kwargs):
     return LangClass(**kwargs)
 
 
-<<<<<<< HEAD
-def info(model=None, markdown=False):
-    return cli_info(model, markdown)
-=======
 def info(model=None, markdown=False, silent=False):
     return cli_info(model, markdown, silent)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c

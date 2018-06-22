@@ -3,11 +3,6 @@ from __future__ import unicode_literals, print_function
 
 from ...language import Language
 from ...attrs import LANG
-<<<<<<< HEAD
-from ...tokens import Doc
-from ...tokenizer import Tokenizer
-
-=======
 from ...tokens import Doc, Token
 from ...tokenizer import Tokenizer
 from .tag_map import TAG_MAP
@@ -72,23 +67,10 @@ def detailed_tokens(tokenizer, text):
         words.append( ShortUnitWord(surface, base, pos) )
         node = node.next
     return words
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 class JapaneseTokenizer(object):
     def __init__(self, cls, nlp=None):
         self.vocab = nlp.vocab if nlp is not None else cls.create_vocab(nlp)
-<<<<<<< HEAD
-        try:
-            from janome.tokenizer import Tokenizer
-        except ImportError:
-            raise ImportError("The Japanese tokenizer requires the Janome "
-                              "library: https://github.com/mocobeta/janome")
-        self.tokenizer = Tokenizer()
-
-    def __call__(self, text):
-        words = [x.surface for x in self.tokenizer.tokenize(text)]
-        return Doc(self.vocab, words=words, spaces=[False]*len(words))
-=======
 
         MeCab = try_mecab_import()
         self.tokenizer = MeCab.Tagger()
@@ -101,7 +83,6 @@ class JapaneseTokenizer(object):
             token._.mecab_tag = dtoken.pos
             token.tag_ = resolve_pos(dtoken)
         return doc
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
     # add dummy methods for to_bytes, from_bytes, to_disk and from_disk to
     # allow serialization (see #1557)
@@ -117,39 +98,21 @@ class JapaneseTokenizer(object):
     def from_disk(self, path, **exclude):
         return self
 
-<<<<<<< HEAD
-
-class JapaneseDefaults(Language.Defaults):
-    lex_attr_getters = dict(Language.Defaults.lex_attr_getters)
-    lex_attr_getters[LANG] = lambda text: 'ja'
-=======
 class JapaneseDefaults(Language.Defaults):
     lex_attr_getters = dict(Language.Defaults.lex_attr_getters)
     lex_attr_getters[LANG] = lambda text: 'ja'
     tag_map = TAG_MAP
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
     @classmethod
     def create_tokenizer(cls, nlp=None):
         return JapaneseTokenizer(cls, nlp)
 
-<<<<<<< HEAD
-
-class Japanese(Language):
-    lang = 'ja'
-    Defaults = JapaneseDefaults
-=======
 class Japanese(Language):
     lang = 'ja'
     Defaults = JapaneseDefaults
     Tokenizer = JapaneseTokenizer
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
     def make_doc(self, text):
         return self.tokenizer(text)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 __all__ = ['Japanese']

@@ -3,19 +3,11 @@ from __future__ import unicode_literals
 
 import regex as re
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 re.DEFAULT_VERSION = re.VERSION1
 merge_char_classes = lambda classes: '[{}]'.format('||'.join(classes))
 split_chars = lambda char: list(char.strip().split(' '))
 merge_chars = lambda char: char.strip().replace(' ', '|')
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 _bengali = r'[\p{L}&&\p{Bengali}]'
 _hebrew = r'[\p{L}&&\p{Hebrew}]'
 _latin_lower = r'[\p{Ll}&&\p{Latin}]'
@@ -24,36 +16,22 @@ _latin = r'[[\p{Ll}||\p{Lu}]&&\p{Latin}]'
 _persian = r'[\p{L}&&\p{Arabic}]'
 _russian_lower = r'[ёа-я]'
 _russian_upper = r'[ЁА-Я]'
-<<<<<<< HEAD
-
-_upper = [_latin_upper, _russian_upper]
-_lower = [_latin_lower, _russian_lower]
-=======
 _tatar_lower = r'[әөүҗңһ]'
 _tatar_upper = r'[ӘӨҮҖҢҺ]'
 
 _upper = [_latin_upper, _russian_upper, _tatar_upper]
 _lower = [_latin_lower, _russian_lower, _tatar_lower]
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 _uncased = [_bengali, _hebrew, _persian]
 
 ALPHA = merge_char_classes(_upper + _lower + _uncased)
 ALPHA_LOWER = merge_char_classes(_lower + _uncased)
 ALPHA_UPPER = merge_char_classes(_upper + _uncased)
 
-<<<<<<< HEAD
-
-_units = ('km km² km³ m m² m³ dm dm² dm³ cm cm² cm³ mm mm² mm³ ha µm nm yd in ft '
-          'kg g mg µg t lb oz m/s km/h kmh mph hPa Pa mbar mb MB kb KB gb GB tb '
-          'TB T G M K % км км² км³ м м² м³ дм дм² дм³ см см² см³ мм мм² мм³ нм '
-          'кг г мг м/с км/ч кПа Па мбар Кб КБ кб Мб МБ мб Гб ГБ гб Тб ТБ тб')
-=======
 _units = ('km km² km³ m m² m³ dm dm² dm³ cm cm² cm³ mm mm² mm³ ha µm nm yd in ft '
           'kg g mg µg t lb oz m/s km/h kmh mph hPa Pa mbar mb MB kb KB gb GB tb '
           'TB T G M K % км км² км³ м м² м³ дм дм² дм³ см см² см³ мм мм² мм³ нм '
           'кг г мг м/с км/ч кПа Па мбар Кб КБ кб Мб МБ мб Гб ГБ гб Тб ТБ тб'
           'كم كم² كم³ م م² م³ سم سم² سم³ مم مم² مم³ كم غرام جرام جم كغ ملغ كوب اكواب')
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 _currency = r'\$ £ € ¥ ฿ US\$ C\$ A\$ ₽ ﷼'
 
 # These expressions contain various unicode variations, including characters
@@ -67,10 +45,6 @@ _hyphens = '- – — -- --- —— ~'
 # Details: https://www.compart.com/en/unicode/category/So
 _other_symbols = r'[\p{So}]'
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 UNITS = merge_chars(_units)
 CURRENCY = merge_chars(_currency)
 QUOTES = merge_chars(_quotes)

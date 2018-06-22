@@ -36,8 +36,6 @@ p
     |  vector table produces rapidly diminishing returns in coverage over these
     |  rare terms.
 
-<<<<<<< HEAD
-=======
 +h(3, "converting") Converting word vectors for use in spaCy
     +tag-new("2.0.10")
 
@@ -76,7 +74,6 @@ p
     |  (#[code .txt]), zipped (#[code .zip]), or tarred and zipped
     |  (#[code .tgz]).
 
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 +h(3, "custom-vectors-coverage") Optimising vector coverage
     +tag-new(2)
 
@@ -139,8 +136,6 @@ p
     |  to the vector of "coast", which is deemed about 73% similar. "Leaving"
     |  was remapped to the vector of "leaving", which is identical.
 
-<<<<<<< HEAD
-=======
 p
     |  If you're using the #[+api("cli#init-model") #[code init-model]] command,
     |  you can set the #[code --prune-vectors] option to easily reduce the size
@@ -154,7 +149,6 @@ p
     |  the vectors model. All other words in the vectors model are mapped to the
     |  closest vector among those retained.
 
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 +h(3, "custom-vectors-add") Adding vectors
     +tag-new(2)
 
@@ -229,21 +223,6 @@ p
     |  package the model using the #[+api("cli#package") #[code package]]
     |  command.
 
-<<<<<<< HEAD
-+h(3, "custom-loading-other") Loading other vectors
-    +tag-new(2)
-
-p
-    |  You can also choose to load in vectors from other sources, like the
-    |  #[+a("https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md") fastText vectors]
-    |  for 294 languages, trained on Wikipedia. After reading in the file,
-    |  the vectors are added to the #[code Vocab] using the
-    |  #[+api("vocab#set_vector") #[code set_vector]] method.
-
-+github("spacy", "examples/vectors_fast_text.py")
-
-=======
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 +h(3, "custom-similarity") Using custom similarity methods
 
 p

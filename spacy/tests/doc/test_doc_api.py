@@ -4,10 +4,7 @@ from __future__ import unicode_literals
 from ..util import get_doc
 from ...tokens import Doc
 from ...vocab import Vocab
-<<<<<<< HEAD
-=======
 from ...attrs import LEMMA
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 import pytest
 import numpy
@@ -112,8 +109,6 @@ def test_doc_api_serialize(en_tokenizer, text):
     assert [t.text for t in tokens] == [t.text for t in new_tokens]
     assert [t.orth for t in tokens] == [t.orth for t in new_tokens]
 
-<<<<<<< HEAD
-=======
     new_tokens = get_doc(tokens.vocab).from_bytes(
         tokens.to_bytes(tensor=False), tensor=False)
     assert tokens.text == new_tokens.text
@@ -126,7 +121,6 @@ def test_doc_api_serialize(en_tokenizer, text):
     assert [t.text for t in tokens] == [t.text for t in new_tokens]
     assert [t.orth for t in tokens] == [t.orth for t in new_tokens]
 
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 def test_doc_api_set_ents(en_tokenizer):
     text = "I use goggle chrone to surf the web"
@@ -185,8 +179,6 @@ def test_doc_api_merge_hang(en_tokenizer):
     doc.merge(8, 32, tag='', lemma='', ent_type='ORG')
 
 
-<<<<<<< HEAD
-=======
 def test_doc_api_retokenizer(en_tokenizer):
     doc = en_tokenizer("WKRO played songs by the beach boys all night")
     with doc.retokenize() as retokenizer:
@@ -207,7 +199,6 @@ def test_doc_api_retokenizer_attrs(en_tokenizer):
     assert doc[4].ent_type_ == 'ORG'
 
 
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 def test_doc_api_sents_empty_string(en_tokenizer):
     doc = en_tokenizer("")
     doc.is_parsed = True

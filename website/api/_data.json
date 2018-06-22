@@ -33,15 +33,12 @@
             "Vectors": "vectors",
             "GoldParse": "goldparse",
             "GoldCorpus": "goldcorpus"
-<<<<<<< HEAD
-=======
         },
 
         "Cython": {
             "Architecture": "cython",
             "Structs": "cython-structs",
             "Classes": "cython-classes"
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         }
     },
 
@@ -50,12 +47,7 @@
         "next": "annotation",
         "menu": {
             "Basics": "basics",
-<<<<<<< HEAD
-            "Neural Network Model": "nn-model",
-            "Cython Conventions": "cython"
-=======
             "Neural Network Model": "nn-model"
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         }
     },
 
@@ -224,8 +216,6 @@
             "Named Entities": "named-entities",
             "Models & Training": "training"
         }
-<<<<<<< HEAD
-=======
     },
 
     "cython": {
@@ -257,6 +247,5 @@
             "Vocab": "vocab",
             "StringStore": "stringstore"
         }
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     }
 }
