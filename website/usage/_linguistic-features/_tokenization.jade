@@ -52,15 +52,6 @@ p
     |  Here's how to add a special case rule to an existing
     |  #[+api("tokenizer") #[code Tokenizer]] instance:
 
-<<<<<<< HEAD
-+code.
-    import spacy
-    from spacy.symbols import ORTH, LEMMA, POS, TAG
-
-    nlp = spacy.load('en')
-    doc = nlp(u'gimme that') # phrase to tokenize
-    assert [w.text for w in doc] == [u'gimme', u'that'] # current tokenization
-=======
 +code-exec.
     import spacy
     from spacy.symbols import ORTH, LEMMA, POS, TAG
@@ -68,23 +59,16 @@ p
     nlp = spacy.load('en_core_web_sm')
     doc = nlp(u'gimme that')  # phrase to tokenize
     print([w.text for w in doc])  # ['gimme', 'that']
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
     # add special case rule
     special_case = [{ORTH: u'gim', LEMMA: u'give', POS: u'VERB'}, {ORTH: u'me'}]
     nlp.tokenizer.add_special_case(u'gimme', special_case)
-<<<<<<< HEAD
-    assert [w.text for w in nlp(u'gimme that')] == [u'gim', u'me', u'that']
-    # Pronoun lemma is returned as -PRON-!
-    assert [w.lemma_ for w in nlp(u'gimme that')] == [u'give', u'-PRON-', u'that']
-=======
 
     # check new tokenization
     print([w.text for w in nlp(u'gimme that')])  # ['gim', 'me', 'that']
 
     # Pronoun lemma is returned as -PRON-!
     print([w.lemma_ for w in nlp(u'gimme that')])  # ['give', '-PRON-', 'that']
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 p
     |  For details on spaCy's custom pronoun lemma #[code -PRON-],
@@ -216,14 +200,9 @@ p
     |  expression object, and pass its #[code .search()] and
     |  #[code .finditer()] methods:
 
-<<<<<<< HEAD
-+code.
-    import regex as re
-=======
 +code-exec.
     import re
     import spacy
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     from spacy.tokenizer import Tokenizer
 
     prefix_re = re.compile(r'''^[\[\(&quot;&apos;]''')
@@ -237,15 +216,10 @@ p
                                     infix_finditer=infix_re.finditer,
                                     token_match=simple_url_re.match)
 
-<<<<<<< HEAD
-    nlp = spacy.load('en')
-    nlp.tokenizer = custom_tokenizer(nlp)
-=======
     nlp = spacy.load('en_core_web_sm')
     nlp.tokenizer = custom_tokenizer(nlp)
     doc = nlp(u"hello-world.")
     print([t.text for t in doc])
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 p
     |  If you need to subclass the tokenizer instead, the relevant methods to
@@ -300,11 +274,7 @@ p
         |  In spaCy v1.x, you had to add a custom tokenizer by passing it to the
         |  #[code make_doc] keyword argument, or by passing a tokenizer "factory"
         |  to #[code create_make_doc]. This was unnecessarily complicated. Since
-<<<<<<< HEAD
-        |  spaCy v2.0, you can simply write to #[code nlp.tokenizer]. If your
-=======
         |  spaCy v2.0, you can write to #[code nlp.tokenizer] instead. If your
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         |  tokenizer needs the vocab, you can write a function and use
         |  #[code nlp.vocab].
 
@@ -323,12 +293,8 @@ p
     |  vocabulary object. Let's say we have the following class as
     |  our tokenizer:
 
-<<<<<<< HEAD
-+code.
-=======
 +code-exec.
     import spacy
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     from spacy.tokens import Doc
 
     class WhitespaceTokenizer(object):
@@ -341,14 +307,11 @@ p
             spaces = [True] * len(words)
             return Doc(self.vocab, words=words, spaces=spaces)
 
-<<<<<<< HEAD
-=======
     nlp = spacy.load('en_core_web_sm')
     nlp.tokenizer = WhitespaceTokenizer(nlp.vocab)
     doc = nlp(u"What's happened to me? he thought. It wasn't a dream.")
     print([t.text for t in doc])
 
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 p
     |  As you can see, we need a #[code Vocab] instance to construct this — but
     |  we won't have it until we get back the loaded #[code nlp] object. The
@@ -356,13 +319,6 @@ p
     |  that you can reuse the "tokenizer factory" and initialise it with
     |  different instances of #[code Vocab].
 
-<<<<<<< HEAD
-+code.
-    nlp = spacy.load('en')
-    nlp.tokenizer = WhitespaceTokenizer(nlp.vocab)
-
-=======
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 +h(3, "own-annotations") Bringing your own annotations
 
 p
@@ -374,10 +330,6 @@ p
     |  specify a list of boolean values, indicating whether each word has a
     |  subsequent space.
 
-<<<<<<< HEAD
-+code.
-    doc = Doc(nlp.vocab, words=[u'Hello', u',', u'world', u'!'], spaces=[False, True, False, False])
-=======
 +code-exec.
     import spacy
     from spacy.tokens import Doc
@@ -387,7 +339,6 @@ p
     doc = Doc(nlp.vocab, words=[u'Hello', u',', u'world', u'!'],
               spaces=[False, True, False, False])
     print([(t.text, t.text_with_ws, t.whitespace_) for t in doc])
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 p
     |  If provided, the spaces list must be the same length as the words list.
@@ -396,13 +347,6 @@ p
     |  attributes. If you don't provide a #[code spaces] sequence, spaCy will
     |  assume that all words are whitespace delimited.
 
-<<<<<<< HEAD
-+code.
-    good_spaces = Doc(nlp.vocab, words=[u'Hello', u',', u'world', u'!'], spaces=[False, True, False, False])
-    bad_spaces = Doc(nlp.vocab, words=[u'Hello', u',', u'world', u'!'])
-    assert bad_spaces.text == u'Hello , world !'
-    assert good_spaces.text == u'Hello, world!'
-=======
 +code-exec.
     import spacy
     from spacy.tokens import Doc
@@ -415,7 +359,6 @@ p
 
     print(bad_spaces.text)   # 'Hello , world !'
     print(good_spaces.text)  # 'Hello, world!'
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 p
     |  Once you have a #[+api("doc") #[code Doc]] object, you can write to its

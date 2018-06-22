@@ -7,18 +7,6 @@ p
 +h(3, "lightning-tour-models") Install models and process text
 
 +code(false, "bash").
-<<<<<<< HEAD
-    python -m spacy download en
-    python -m spacy download de
-
-+code.
-    import spacy
-    nlp = spacy.load('en')
-    doc = nlp(u'Hello, world. Here are two sentences.')
-
-    nlp_de = spacy.load('de')
-    doc_de = nlp_de(u'Ich bin ein Berliner.')
-=======
     python -m spacy download en_core_web_sm
     python -m spacy download de_core_news_sm
 
@@ -31,7 +19,6 @@ p
     nlp_de = spacy.load('de_core_news_sm')
     doc_de = nlp_de(u'Ich bin ein Berliner.')
     print([t.text for t in doc_de])
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 +infobox
     |  #[+label-inline API:] #[+api("spacy#load") #[code spacy.load()]]
@@ -41,21 +28,6 @@ p
 +h(3, "lightning-tour-tokens-sentences") Get tokens, noun chunks & sentences
     +tag-model("dependency parse")
 
-<<<<<<< HEAD
-+code.
-    doc = nlp(u"Peach emoji is where it has always been. Peach is the superior "
-              u"emoji. It's outranking eggplant 🍑 ")
-
-    assert doc[0].text == u'Peach'
-    assert doc[1].text == u'emoji'
-    assert doc[-1].text == u'🍑'
-    assert doc[17:19].text == u'outranking eggplant'
-    assert list(doc.noun_chunks)[0].text == u'Peach emoji'
-
-    sentences = list(doc.sents)
-    assert len(sentences) == 3
-    assert sentences[1].text == u'Peach is the superior emoji.'
-=======
 +code-exec.
     import spacy
 
@@ -73,7 +45,6 @@ p
     sentences = list(doc.sents)
     assert len(sentences) == 3
     print(sentences[1].text)    # 'Peach is the superior emoji.'
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 +infobox
     |  #[+label-inline API:] #[+api("doc") #[code Doc]], #[+api("token") #[code Token]]
@@ -82,21 +53,6 @@ p
 +h(3, "lightning-tour-pos-tags") Get part-of-speech tags and flags
     +tag-model("tagger")
 
-<<<<<<< HEAD
-+code.
-    doc = nlp(u'Apple is looking at buying U.K. startup for $1 billion')
-    apple = doc[0]
-    assert [apple.pos_, apple.pos] == [u'PROPN', 17049293600679659579]
-    assert [apple.tag_, apple.tag] == [u'NNP', 15794550382381185553]
-    assert [apple.shape_, apple.shape] == [u'Xxxxx', 16072095006890171862]
-    assert apple.is_alpha == True
-    assert apple.is_punct == False
-
-    billion = doc[10]
-    assert billion.is_digit == False
-    assert billion.like_num == True
-    assert billion.like_email == False
-=======
 +code-exec.
     import spacy
 
@@ -113,7 +69,6 @@ p
     print('Digit?', billion.is_digit)
     print('Like a number?', billion.like_num)
     print('Like an email address?', billion.like_email)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 +infobox
     |  #[+label-inline API:] #[+api("token") #[code Token]]
@@ -121,21 +76,6 @@ p
 
 +h(3, "lightning-tour-hashes") Use hash values for any string
 
-<<<<<<< HEAD
-+code.
-    doc = nlp(u'I love coffee')
-    coffee_hash = nlp.vocab.strings[u'coffee'] # 3197928453018144401
-    coffee_text = nlp.vocab.strings[coffee_hash] # 'coffee'
-
-    assert doc[2].orth == coffee_hash == 3197928453018144401
-    assert doc[2].text == coffee_text == u'coffee'
-
-    beer_hash = doc.vocab.strings.add(u'beer') # 3073001599257881079
-    beer_text = doc.vocab.strings[beer_hash] # 'beer'
-
-    unicorn_hash = doc.vocab.strings.add(u'🦄 ') # 18234233413267120783
-    unicorn_text = doc.vocab.strings[unicorn_hash] # '🦄 '
-=======
 +code-exec.
     import spacy
 
@@ -155,7 +95,6 @@ p
     unicorn_hash = doc.vocab.strings.add(u'🦄 ')  # 18234233413267120783
     unicorn_text = doc.vocab.strings[unicorn_hash]  # '🦄 '
     print(unicorn_hash, unicorn_text)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 +infobox
     |  #[+label-inline API:] #[+api("stringstore") #[code StringStore]]
@@ -164,18 +103,6 @@ p
 +h(3, "lightning-tour-entities") Recognise and update named entities
     +tag-model("NER")
 
-<<<<<<< HEAD
-+code.
-    doc = nlp(u'San Francisco considers banning sidewalk delivery robots')
-    ents = [(ent.text, ent.start_char, ent.end_char, ent.label_) for ent in doc.ents]
-    assert ents == [(u'San Francisco', 0, 13, u'GPE')]
-
-    from spacy.tokens import Span
-    doc = nlp(u'Netflix is hiring a new VP of global policy')
-    doc.ents = [Span(doc, 0, 1, label=doc.vocab.strings[u'ORG'])]
-    ents = [(ent.start_char, ent.end_char, ent.label_) for ent in doc.ents]
-    assert ents == [(0, 7, u'ORG')]
-=======
 +code-exec.
     import spacy
 
@@ -189,7 +116,6 @@ p
     doc.ents = [Span(doc, 0, 1, label=doc.vocab.strings[u'ORG'])]
     for ent in doc.ents:
         print(ent.text, ent.start_char, ent.end_char, ent.label_)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 +infobox
     |  #[+label-inline Usage:] #[+a("/usage/linguistic-features#named-entities") Named entity recognition]
@@ -209,11 +135,7 @@ p
         for i in range(10):
             random.shuffle(train_data)
             for text, annotations in train_data:
-<<<<<<< HEAD
-                nlp.update([text], [annotations] sgd=optimizer)
-=======
                 nlp.update([text], [annotations], sgd=optimizer)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     nlp.to_disk('/model')
 
 +infobox
@@ -277,32 +199,16 @@ p
 +h(3, "lightning-tour-word-vectors") Get word vectors and similarity
     +tag-model("word vectors")
 
-<<<<<<< HEAD
-+code.
-    doc = nlp(u"Apple and banana are similar. Pasta and hippo aren't.")
-=======
 +code-exec.
     import spacy
 
     nlp = spacy.load('en_core_web_md')
     doc = nlp(u"Apple and banana are similar. Pasta and hippo aren't.")
 
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     apple = doc[0]
     banana = doc[2]
     pasta = doc[6]
     hippo = doc[8]
-<<<<<<< HEAD
-    assert apple.similarity(banana) > pasta.similarity(hippo)
-    assert apple.has_vector
-    assert banana.has_vector
-    assert pasta.has_vector
-    assert hippo.has_vector
-
-p
-    |  For the best results, you should run this example using the
-    |  #[+a("/models/en#en_vectors_web_lg") #[code en_vectors_web_lg]] model.
-=======
 
     print('apple <-> banana', apple.similarity(banana))
     print('pasta <-> hippo', pasta.similarity(hippo))
@@ -312,7 +218,6 @@ p
     |  For the best results, you should run this example using the
     |  #[+a("/models/en#en_vectors_web_lg") #[code en_vectors_web_lg]] model
     |  (currently not available in the live demo).
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 +infobox
     |  #[+label-inline Usage:] #[+a("/usage/vectors-similarity") Word vectors and similarity]
@@ -338,19 +243,11 @@ p
 
 +h(3, "lightning-tour-rule-matcher") Match text with token rules
 
-<<<<<<< HEAD
-+code.
-    import spacy
-    from spacy.matcher import Matcher
-
-    nlp = spacy.load('en')
-=======
 +code-exec.
     import spacy
     from spacy.matcher import Matcher
 
     nlp = spacy.load('en_core_web_sm')
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     matcher = Matcher(nlp.vocab)
 
     def set_sentiment(matcher, doc, i, matches):
@@ -360,10 +257,6 @@ p
     pattern2 = [[{'ORTH': emoji, 'OP': '+'}] for emoji in ['😀', '😂', '🤣', '😍']]
     matcher.add('GoogleIO', None, pattern1) # match "Google I/O" or "Google i/o"
     matcher.add('HAPPY', set_sentiment, *pattern2) # match one or more happy emoji
-<<<<<<< HEAD
-    text = open('customer_feedback_627.txt').read()
-    matches = nlp(text)
-=======
 
     doc = nlp(u"A text about Google I/O 😀😀")
     matches = matcher(doc)
@@ -373,7 +266,6 @@ p
        span = doc[start:end]
        print(string_id, span.text)
     print('Sentiment', doc.sentiment)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 +infobox
     |  #[+label-inline API:] #[+api("matcher") #[code Matcher]]
@@ -397,16 +289,6 @@ p
 +h(3, "lightning-tour-dependencies") Get syntactic dependencies
     +tag-model("dependency parse")
 
-<<<<<<< HEAD
-+code.
-    def dependency_labels_to_root(token):
-        """Walk up the syntactic tree, collecting the arc labels."""
-        dep_labels = []
-        while token.head != token:
-            dep_labels.append(token.dep)
-            token = token.head
-        return dep_labels
-=======
 +code-exec.
     import spacy
 
@@ -420,7 +302,6 @@ p
             dep_labels.append(token.dep_)
             token = token.head
     print(dep_labels)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 +infobox
     |  #[+label-inline API:] #[+api("token") #[code Token]]
@@ -428,27 +309,6 @@ p
 
 +h(3, "lightning-tour-numpy-arrays") Export to numpy arrays
 
-<<<<<<< HEAD
-+code.
-    from spacy.attrs import ORTH, LIKE_URL, IS_OOV
-
-    attr_ids = [ORTH, LIKE_URL, IS_OOV]
-    doc_array = doc.to_array(attr_ids)
-    assert doc_array.shape == (len(doc), len(attr_ids))
-    assert doc[0].orth == doc_array[0, 0]
-    assert doc[1].orth == doc_array[1, 0]
-    assert doc[0].like_url == doc_array[0, 1]
-    assert list(doc_array[:, 1]) == [t.like_url for t in doc]
-
-+h(3, "lightning-tour-inline") Calculate inline markup on original string
-
-+code.
-    def put_spans_around_tokens(doc, get_classes):
-        """Given some function to compute class names, put each token in a
-        span element, with the appropriate classes computed. All whitespace is
-        preserved, outside of the spans. (Of course, HTML won't display more than
-        one whitespace character it – but the point is, no information is lost
-=======
 +code-exec.
     import spacy
     from spacy.attrs import ORTH, LIKE_URL
@@ -481,7 +341,6 @@ p
         span element, with the appropriate classes computed. All whitespace is
         preserved, outside of the spans. (Of course, HTML will only display
         multiple whitespace if enabled – but the point is, no information is lost
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         and you can calculate what you need, e.g. &lt;br /&gt;, &lt;p&gt; etc.)
         """
         output = []
@@ -490,22 +349,14 @@ p
             if token.is_space:
                 output.append(token.text)
             else:
-<<<<<<< HEAD
-                classes = ' '.join(get_classes(token))
-=======
                 classes = 'pos-{} dep-{}'.format(token.pos_, token.dep_)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
                 output.append(html.format(classes=classes, word=token.text, space=token.whitespace_))
         string = ''.join(output)
         string = string.replace('\n', '')
         string = string.replace('\t', '    ')
-<<<<<<< HEAD
-        return string
-=======
         return '&lt;pre&gt;{}&lt;/pre&gt;'.format(string)
 
     nlp = spacy.load('en_core_web_sm')
     doc = nlp(u"This is a test.\n\nHello   world.")
     html = put_spans_around_tokens(doc)
     print(html)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c

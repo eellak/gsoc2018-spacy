@@ -16,12 +16,7 @@
             "Visualizers": "visualizers"
         },
         "In-depth": {
-<<<<<<< HEAD
-            "Code Examples": "examples",
-            "Resources": "resources"
-=======
             "Code Examples": "examples"
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         }
     },
 
@@ -29,10 +24,6 @@
         "title": "Install spaCy",
         "next": "models",
         "quickstart": true,
-<<<<<<< HEAD
-        "changelog": true,
-=======
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         "menu": {
             "Quickstart": "quickstart",
             "Instructions": "instructions",
@@ -101,10 +92,7 @@
             "Dependency Parse": "dependency-parse",
             "Named Entities": "named-entities",
             "Tokenization": "tokenization",
-<<<<<<< HEAD
-=======
             "Sentence Segmentation": "sbd",
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
             "Rule-based Matching": "rule-based-matching"
         }
     },
@@ -115,11 +103,7 @@
         "menu": {
             "How Pipelines Work": "pipelines",
             "Custom Components": "custom-components",
-<<<<<<< HEAD
-            "Developing Extensions": "extensions",
-=======
             "Extension Attributes": "custom-components-extensions",
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
             "Multi-Threading": "multithreading",
             "Serialization": "serialization"
         }
@@ -162,10 +146,6 @@
         "title": "Visualizers",
         "tag_new": 2,
         "teaser": "Visualize dependencies and entities in your browser and notebook, or export HTML.",
-<<<<<<< HEAD
-        "next": "resources",
-=======
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         "menu": {
             "Dependencies": "dep",
             "Entities": "ent",
@@ -174,31 +154,9 @@
         }
     },
 
-<<<<<<< HEAD
-    "resources": {
-        "title": "Resources",
-        "teaser": "Libraries, demos, books, courses and research systems featuring spaCy.",
-        "next": "examples",
-        "menu": {
-            "Third-party libraries": "libraries",
-            "Extensions": "extensions",
-            "Demos & Visualizations": "demos",
-            "Books & Courses": "books",
-            "Jupyter Notebooks": "notebooks",
-            "Videos": "videos",
-            "Research": "research"
-        }
-    },
-
     "examples": {
         "title": "Code Examples",
         "teaser": "Full code examples you can modify and run.",
-        "next": "resources",
-=======
-    "examples": {
-        "title": "Code Examples",
-        "teaser": "Full code examples you can modify and run.",
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
         "menu": {
             "Information Extraction": "information-extraction",
             "Pipeline": "pipeline",

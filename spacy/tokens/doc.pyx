@@ -108,15 +108,12 @@ cdef class Doc:
     def has_extension(cls, name):
         return name in Underscore.doc_extensions
 
-<<<<<<< HEAD
-=======
     @classmethod
     def remove_extension(cls, name):
         if not cls.has_extension(name):
             raise ValueError(Errors.E046.format(name=name))
         return Underscore.doc_extensions.pop(name)
 
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     def __init__(self, Vocab vocab, words=None, spaces=None, user_data=None,
                  orths_and_spaces=None):
         """Create a Doc object.
@@ -838,16 +835,11 @@ cdef class Doc:
 
         cdef attr_t[:, :] attrs
         cdef int i, start, end, has_space
-<<<<<<< HEAD
-        self.sentiment = msg['sentiment']
-        self.tensor = msg['tensor']
-=======
 
         if 'sentiment' not in exclude and 'sentiment' in msg:
             self.sentiment = msg['sentiment']
         if 'tensor' not in exclude and 'tensor' in msg:
             self.tensor = msg['tensor']
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
         start = 0
         cdef const LexemeC* lex

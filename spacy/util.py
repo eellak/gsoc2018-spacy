@@ -590,8 +590,6 @@ def minify_html(html):
     return html.strip().replace('    ', '').replace('\n', '')
 
 
-<<<<<<< HEAD
-=======
 def escape_html(text):
     """Replace <, >, &, " with their HTML encoded representation. Intended to
     prevent HTML errors in rendered displaCy markup.
@@ -606,7 +604,6 @@ def escape_html(text):
     return text
 
 
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 def use_gpu(gpu_id):
     try:
         import cupy.cuda.device
@@ -623,8 +620,6 @@ def use_gpu(gpu_id):
 def fix_random_seed(seed=0):
     random.seed(seed)
     numpy.random.seed(seed)
-<<<<<<< HEAD
-=======
 
 
 class SimpleFrozenDict(dict):
@@ -640,4 +635,3 @@ class SimpleFrozenDict(dict):
 
     def update(self, other):
         raise NotImplementedError(Errors.E095)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c

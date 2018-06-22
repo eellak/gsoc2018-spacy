@@ -31,12 +31,6 @@ p
     |  #[strong lookup table that works in both directions] – you can look up a
     |  string to get its hash, or a hash to get its string:
 
-<<<<<<< HEAD
-+code.
-    doc = nlp(u'I love coffee')
-    assert doc.vocab.strings[u'coffee'] == 3197928453018144401
-    assert doc.vocab.strings[3197928453018144401] == u'coffee'
-=======
 +code-exec.
     import spacy
 
@@ -44,7 +38,6 @@ p
     doc = nlp(u'I love coffee')
     print(doc.vocab.strings[u'coffee'])  # 3197928453018144401
     print(doc.vocab.strings[3197928453018144401])  # 'coffee'
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 +aside("What does 'L' at the end of a hash mean?")
     |  If you return a hash value in the #[strong Python 2 interpreter], it'll
@@ -61,15 +54,11 @@ p
     |  context, its spelling and whether it consists of alphabetic characters
     |  won't ever change. Its hash value will also always be the same.
 
-<<<<<<< HEAD
-+code.
-=======
 +code-exec.
     import spacy
 
     nlp = spacy.load('en_core_web_sm')
     doc = nlp(u'I love coffee')
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     for word in doc:
         lexeme = doc.vocab[word.text]
         print(lexeme.text, lexeme.orth, lexeme.shape_, lexeme.prefix_, lexeme.suffix_,
@@ -105,24 +94,6 @@ p
     |  sure all objects you create have access to the same vocabulary. If they
     |  don't, spaCy might not be able to find the strings it needs.
 
-<<<<<<< HEAD
-+code.
-    from spacy.tokens import Doc
-    from spacy.vocab import Vocab
-
-    doc = nlp(u'I like coffee') # original Doc
-    assert doc.vocab.strings[u'coffee'] == 3197928453018144401 # get hash
-    assert doc.vocab.strings[3197928453018144401] == u'coffee' # 👍
-
-    empty_doc = Doc(Vocab()) # new Doc with empty Vocab
-    # empty_doc.vocab.strings[3197928453018144401] will raise an error :(
-
-    empty_doc.vocab.strings.add(u'coffee') # add "coffee" and generate hash
-    assert empty_doc.vocab.strings[3197928453018144401] == u'coffee' # 👍
-
-    new_doc = Doc(doc.vocab) # create new doc with first doc's vocab
-    assert new_doc.vocab.strings[3197928453018144401] == u'coffee' # 👍
-=======
 +code-exec.
     import spacy
     from spacy.tokens import Doc
@@ -141,7 +112,6 @@ p
 
     new_doc = Doc(doc.vocab)  # create new doc with first doc's vocab
     print(new_doc.vocab.strings[3197928453018144401])  # 'coffee' 👍
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 
 p
     |  If the vocabulary doesn't contain a string for #[code 3197928453018144401],

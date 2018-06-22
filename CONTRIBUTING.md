@@ -73,11 +73,7 @@ so it only becomes visible on click, making the issue easier to read and follow.
 ### Issue labels
 
 To distinguish issues that are opened by us, the maintainers, we usually add a
-<<<<<<< HEAD
-💫 to the title. [See this page](https://github.com/explosion/spaCy/labels) 
-=======
 💫 to the title. [See this page](https://github.com/explosion/spaCy/labels)
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
 for an overview of the system we use to tag our issues and pull requests.
 
 ## Contributing to the code base

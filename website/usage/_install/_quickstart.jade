@@ -16,13 +16,9 @@
 
     +qs({package: 'source'}) git clone https://github.com/explosion/spaCy
     +qs({package: 'source'}) cd spaCy
-<<<<<<< HEAD
-    +qs({package: 'source'}) export PYTHONPATH=`pwd`
-=======
     +qs({package: 'source', os: 'mac'}) export PYTHONPATH=`pwd`
     +qs({package: 'source', os: 'linux'}) export PYTHONPATH=`pwd`
     +qs({package: 'source', os: 'windows'}) set PYTHONPATH=/path/to/spaCy
->>>>>>> 14d9007efd2ca457c6e6549d5599e460e198904c
     +qs({package: 'source'}) pip install -r requirements.txt
     +qs({package: 'source'}) python setup.py build_ext --inplace
 
