@@ -3,12 +3,6 @@ from __future__ import unicode_literals
 from ...symbols import ORTH, LEMMA, TAG, NORM, ADP, DET
 import pickle
 
-def load_pickle(file_path):
-    # load file
-    with open(file_path, 'rb') as f:
-        return pickle.load(f)
-verbs = load_pickle('etc/elwiktionary_verbs.pkl')
-
 _exc = {
 
 }
