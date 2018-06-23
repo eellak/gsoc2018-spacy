@@ -3,7 +3,7 @@ from .stop_words import STOP_WORDS
 from .tokenizer_exceptions import TOKENIZER_EXCEPTIONS
 from .lex_attrs import LEX_ATTRS
 from .tag_map import TAG_MAP
-from .lemmatizer import LOOKUP
+from .lemmatizer import LEMMA_RULES, LEMMA_INDEX,LOOKUP
 from .morph_rules import MORPH_RULES
 from .syntax_iterators import SYNTAX_ITERATORS
 from .norm_exceptions import NORM_EXCEPTIONS
@@ -26,12 +26,11 @@ class GreekDefaults(Language.Defaults):
     lemma_lookup= LOOKUP
     lemma_rules = LEMMA_RULES
     lemma_index = LEMMA_INDEX
-    lemma_exc = LEMMA_EXC
     morph_rules = MORPH_RULES
     syntax_iterators = SYNTAX_ITERATORS
 
 class Greek(Language):
-    lang = 'el' 
+    lang = 'el'
     Defaults = GreekDefaults
 
 __all__ = ['Greek']
