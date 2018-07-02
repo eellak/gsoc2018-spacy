@@ -88,8 +88,12 @@ class Lemmatizer(object):
 
 
 def lemmatize(string, index, exceptions, rules):
+#    import pdb; pdb.set_trace()
     string = string.lower()
     forms = []
+    if string in index:
+        forms.append(string)
+        return list(set(forms))
     forms.extend(exceptions.get(string, []))
     oov_forms = []
     if not forms:
