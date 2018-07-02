@@ -18,7 +18,7 @@ unwanted_parts = '''
 '''
 
 
-wiktionary_file_path = '../res/elwiktionary-latest-pages-articles.xml'
+wiktionary_file_path = '/data/gsoc2018-spacy/spacy/lang/el/res/elwiktionary-latest-pages-articles.xml'
 
 proper_names_dict={
     'ουσιαστικό':'nouns',
@@ -49,7 +49,16 @@ for i in expected_parts_dict:
     with open('_{0}.py'.format(proper_names_dict[i]), 'w') as f:
         f.write('from __future__ import unicode_literals\n')
         f.write('{} = set(\"\"\"\n'.format(proper_names_dict[i].upper()))
-        f.write(' '.join(sorted(expected_parts_dict[i])))
+        words = sorted(expected_parts_dict[i])
+        line = ''
+        to_write = []
+        for word in words:            
+            if len(line + ' ' + word) > 79:
+                to_write.append(line)
+                line = ''
+            else:
+                line = line + ' ' + word
+        f.write('\n'.join(to_write))
         f.write('\n\"\"\".split())')
 
 
