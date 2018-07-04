@@ -9,7 +9,7 @@ from ._nouns_irreg import NOUNS_IRREG
 from ._verbs_irreg import VERBS_IRREG
 from ._nouns import NOUNS
 from ._verbs import VERBS
-from ._lemma_rules import ADJECTIVE_RULES, NOUN_RULES, VERB_RULES, PUNCT_RULES
+from ._lemma_rules import ADJECTIVE_RULES, NOUN_RULES, VERB_RULES, PUNCT_RULES, DETS_IRREG
 
 
 LEMMA_INDEX = {'adj': ADJECTIVES, 'adv': ADVERBS, 'noun': NOUNS, 'verb': VERBS}
