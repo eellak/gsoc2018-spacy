@@ -1,7 +1,7 @@
 # coding: utf8
 from __future__ import unicode_literals
 
-from .symbols import POS, NOUN, VERB, ADJ, PUNCT, ADV
+from .symbols import POS, NOUN, VERB, ADJ, PUNCT, ADV, DET, AUX
 from .symbols import VerbForm_inf, VerbForm_none, Number_sing, Degree_pos
 
 
@@ -22,6 +22,8 @@ class Lemmatizer(object):
         if univ_pos in (NOUN, 'NOUN', 'noun'):
             univ_pos = 'noun'
         elif univ_pos in (VERB, 'VERB', 'verb'):
+            univ_pos = 'verb'
+        elif univ_pos in (AUX,'AUX','AUX'):
             univ_pos = 'verb'
         elif univ_pos in (ADJ, 'ADJ', 'adj'):
             univ_pos = 'adj'
