@@ -1,7 +1,7 @@
 # coding: utf8
 from __future__ import unicode_literals
 
-from .symbols import POS, NOUN, VERB, ADJ, PUNCT
+from .symbols import POS, NOUN, VERB, ADJ, PUNCT, ADV
 from .symbols import VerbForm_inf, VerbForm_none, Number_sing, Degree_pos
 
 
@@ -27,6 +27,8 @@ class Lemmatizer(object):
             univ_pos = 'adj'
         elif univ_pos in (PUNCT, 'PUNCT', 'punct'):
             univ_pos = 'punct'
+        elif univ_pos in (ADV,'ADV','adv'):
+            univ_pos = 'adv'
         else:
             return list(set([string.lower()]))
         # See Issue #435 for example of where this logic is requied.
