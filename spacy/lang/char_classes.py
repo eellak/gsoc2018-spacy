@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 import regex as re
-
 re.DEFAULT_VERSION = re.VERSION1
 merge_char_classes = lambda classes: '[{}]'.format('||'.join(classes))
 split_chars = lambda char: list(char.strip().split(' '))
@@ -16,11 +15,14 @@ _latin = r'[[\p{Ll}||\p{Lu}]&&\p{Latin}]'
 _persian = r'[\p{L}&&\p{Arabic}]'
 _russian_lower = r'[ёа-я]'
 _russian_upper = r'[ЁА-Я]'
+_greek_lower = r'[αβγδεζηθικλμνξοπρστυφχψωάέίόώήύ]'
+_greek_upper = r'[ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΆΈΊΌΏΉΎ]'
+
 _tatar_lower = r'[әөүҗңһ]'
 _tatar_upper = r'[ӘӨҮҖҢҺ]'
 
-_upper = [_latin_upper, _russian_upper, _tatar_upper]
-_lower = [_latin_lower, _russian_lower, _tatar_lower]
+_upper = [_latin_upper, _russian_upper, _tatar_upper, _greek_upper]
+_lower = [_latin_lower, _russian_lower, _tatar_lower, _greek_lower]
 _uncased = [_bengali, _hebrew, _persian]
 
 ALPHA = merge_char_classes(_upper + _lower + _uncased)
