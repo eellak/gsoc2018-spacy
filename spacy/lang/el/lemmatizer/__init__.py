@@ -18,4 +18,4 @@ LEMMA_RULES = {'adj': ADJECTIVE_RULES, 'noun': NOUN_RULES, 'verb': VERB_RULES,
                'punct': PUNCT_RULES}
 
 
-LEMMA_EXC = {'adj': ADJECTIVES_IRREG, 'noun': NOUNS_IRREG}
+LEMMA_EXC = {'adj': ADJECTIVES_IRREG, 'noun': NOUNS_IRREG, 'det': DETS_IRREG}
