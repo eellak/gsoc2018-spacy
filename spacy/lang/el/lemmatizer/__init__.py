@@ -6,10 +6,11 @@ from ._adjectives import ADJECTIVES
 from ._adjectives_irreg import ADJECTIVES_IRREG
 from ._adverbs import ADVERBS
 from ._nouns_irreg import NOUNS_IRREG
+from ._dets_irreg import DETS_IRREG
 from ._verbs_irreg import VERBS_IRREG
 from ._nouns import NOUNS
 from ._verbs import VERBS
-from ._lemma_rules import ADJECTIVE_RULES, NOUN_RULES, VERB_RULES, PUNCT_RULES, DETS_IRREG
+from ._lemma_rules import ADJECTIVE_RULES, NOUN_RULES, VERB_RULES, PUNCT_RULES
 
 
 LEMMA_INDEX = {'adj': ADJECTIVES, 'adv': ADVERBS, 'noun': NOUNS, 'verb': VERBS}
