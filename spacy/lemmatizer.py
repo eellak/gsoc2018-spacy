@@ -27,6 +27,8 @@ class Lemmatizer(object):
             univ_pos = 'adj'
         elif univ_pos in (PUNCT, 'PUNCT', 'punct'):
             univ_pos = 'punct'
+        elif univ_pos in (DET,'DET','det'):
+            univ_pos = 'det'
         elif univ_pos in (ADV,'ADV','adv'):
             univ_pos = 'adv'
         else:
