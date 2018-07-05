@@ -23,7 +23,7 @@ class GreekDefaults(Language.Defaults):
     tokenizer_exceptions = update_exc(BASE_EXCEPTIONS, TOKENIZER_EXCEPTIONS)
     tag_map= TAG_MAP
     stop_words = STOP_WORDS
-    lemma_lookup= LOOKUP
+    # lemma_lookup= LOOKUP
     lemma_rules = LEMMA_RULES
     lemma_index = LEMMA_INDEX
     lemma_exc = LEMMA_EXC
