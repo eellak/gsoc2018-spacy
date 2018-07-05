@@ -15,9 +15,8 @@ _latin = r'[[\p{Ll}||\p{Lu}]&&\p{Latin}]'
 _persian = r'[\p{L}&&\p{Arabic}]'
 _russian_lower = r'[ёа-я]'
 _russian_upper = r'[ЁА-Я]'
-_greek_lower = r'[αβγδεζηθικλμνξοπρστυφχψωάέίόώήύ]'
-_greek_upper = r'[ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΆΈΊΌΏΉΎ]'
-
+_greek_lower = r'[α-ωάέίόώήύ]'
+_greek_upper = r'[Α-ΩΆΈΊΌΏΉΎ]'
 _tatar_lower = r'[әөүҗңһ]'
 _tatar_upper = r'[ӘӨҮҖҢҺ]'
 
