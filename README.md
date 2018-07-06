@@ -35,8 +35,7 @@ The project is forked from spaCy.io so it uses MIT License.
 ### Training POS/DEP
 1. `cd pos_tagger/`
 
-2. 
-Without vectors:
+2. Without vectors:
 `python3 -m spacy train el small/ el_gdt-ud-train.json el_gdt-ud-dev.json --meta-path small.json --no-entities`
 
 With vectors:
