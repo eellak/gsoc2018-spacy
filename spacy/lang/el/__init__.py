@@ -7,6 +7,7 @@ from .lemmatizer import LEMMA_RULES, LEMMA_INDEX, LOOKUP, LEMMA_EXC
 from .morph_rules import MORPH_RULES
 from .syntax_iterators import SYNTAX_ITERATORS
 from .norm_exceptions import NORM_EXCEPTIONS
+from .tokenizer import GreekTokenizer
 # Default imports
 from ..tokenizer_exceptions import BASE_EXCEPTIONS
 from ..norm_exceptions import BASE_NORMS
@@ -29,6 +30,23 @@ class GreekDefaults(Language.Defaults):
     lemma_exc = LEMMA_EXC
     morph_rules = MORPH_RULES
     syntax_iterators = SYNTAX_ITERATORS
+
+    @classmethod
+    def create_tokenizer(cls, nlp=None):
+        rules = cls.tokenizer_exceptions
+        token_match = cls.token_match
+        prefix_search = (util.compile_prefix_regex(cls.prefixes).search
+                         if cls.prefixes else None)
+        suffix_search = (util.compile_suffix_regex(cls.suffixes).search
+                         if cls.suffixes else None)
+        infix_finditer = (util.compile_infix_regex(cls.infixes).finditer
+                          if cls.infixes else None)
+        vocab = nlp.vocab if nlp is not None else cls.create_vocab(nlp)
+        return GreekTokenizer(vocab, rules=rules,
+                         prefix_search=prefix_search,
+                         suffix_search=suffix_search,
+                         infix_finditer=infix_finditer,
+                         token_match=token_match)
 
 class Greek(Language):
     lang = 'el'
