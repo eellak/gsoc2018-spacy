@@ -8,13 +8,13 @@ class GreekTokenizer:
 	def __init__(self, vocab, rules=None, prefix_search=None, suffix_search=None, infix_finditer=None, token_match=None):
 		self.token_match = token_match
 		self.prefix_search = prefix_search
-        self.suffix_search = suffix_search
-        self.infix_finditer = infix_finditer
-        self.vocab = vocab
-        self._rules = {}
-        if rules is not None:
-            for chunk, substrings in sorted(rules.items()):
-                self._rules[chuck] = substrings
+        	self.suffix_search = suffix_search
+        	self.infix_finditer = infix_finditer
+        	self.vocab = vocab
+        	self._rules = {}
+        	if rules is not None:
+			for chunk, substrings in sorted(rules.items()):
+                		self._rules[chuck] = substrings
 
 
     def __call__(self, string):
