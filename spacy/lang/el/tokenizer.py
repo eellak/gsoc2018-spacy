@@ -3,8 +3,9 @@ from ...errors import Errors, Warnings, deprecation_warning
 from ..tokens import Doc
 import regex as re
 
+
 class GreekTokenizer:
-	def __init__(self, vocab, rules=None, prefix_search=None,suffix_search=None, infix_finditer=None, token_match=None):
+	def __init__(self, vocab, rules=None, prefix_search=None, suffix_search=None, infix_finditer=None, token_match=None):
 		self.token_match = token_match
 		self.prefix_search = prefix_search
         self.suffix_search = suffix_search
@@ -88,4 +89,3 @@ class GreekTokenizer:
             return 0
         match = self.suffix_search(string)
         return (match.end() - match.start()) if match is not None else 0
-    	
