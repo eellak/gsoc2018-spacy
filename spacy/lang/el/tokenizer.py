@@ -22,7 +22,7 @@ class GreekTokenizer:
 		return Doc(self.vocab, tokens)
 
 	def tokenize(self,text):
-		tokens = []
+	    tokens = []
 	    for substring in text.split(' '):
 		suffixes = []
 		while substring:
