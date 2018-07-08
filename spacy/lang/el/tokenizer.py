@@ -15,9 +15,7 @@ class GreekTokenizer:
         if rules is not None:
             for chunk, substrings in sorted(rules.items()):
                 self._rules[chuck] = substrings
-
-
-    def __call__(self, string):
+	def __call__(self, string):
     	if len(string) >= (2 ** 30):
             raise ValueError(Errors.E025.format(length=len(string)))
         tokens = tokenize(self,string)
