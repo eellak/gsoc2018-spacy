@@ -49,7 +49,7 @@ class GreekTokenizer:
 			tokens.append(substring)
 			substring = ''
 		tokens.extend(reversed(suffixes))
-	    return tokens
+	     return tokens
 
 
 	def find_infix(self, unicode string):
