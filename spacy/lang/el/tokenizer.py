@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from ...errors import Errors, Warnings, deprecation_warning
-from ..tokens import Doc
+from ...tokens import Doc
 import regex as re
 
 class GreekTokenizer:
