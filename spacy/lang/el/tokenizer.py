@@ -21,8 +21,8 @@ class GreekTokenizer:
 		return Doc(self.vocab, tokens)
 	def tokenize(self, text):
 		tokens = []
-		for substring2 in text.split(' '):
-			substring = substring2
+		for substring in text.split(' '):
+			substring = substring
 			suffixes = []
 			while (substring != ''):
 				if substring in self._rules:
@@ -34,8 +34,9 @@ class GreekTokenizer:
 					substring = substring[split:]
 				elif self.find_suffix(substring) is not None:
 					split = self.find_suffix(substring)
-					suffixes.append(substring[split:])
-					substring = substring[:split]
+					suffixes.append(substring[-split:])
+					#pdb.set_trace()
+					substring = substring[:-split]
 				elif self.find_infix(substring) is not None and len(self.find_infix(substring))>0:
 					infixes = self.find_infix(substring)
 					offset = 0
