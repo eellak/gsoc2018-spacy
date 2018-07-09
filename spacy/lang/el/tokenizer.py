@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from ...errors import Errors, Warnings, deprecation_warning
 from ...tokens import Doc
 import regex as re
-
+import pdb
 class GreekTokenizer:
 	def __init__(self, vocab, rules=None, prefix_search=None, suffix_search=None, infix_finditer=None, token_match=None):
 		self.token_match = token_match
@@ -21,9 +21,10 @@ class GreekTokenizer:
 		return Doc(self.vocab, tokens)
 	def tokenize(self, text):
 		tokens = []
-		for substring in text.split(' '):
+		for substring2 in text.split(' '):
+			substring = substring2
 			suffixes = []
-			while (substring):
+			while (substring != ''):
 				if substring in self._rules:
 					tokens.extend(self._rules[substring])
 					substring = ''
@@ -35,8 +36,8 @@ class GreekTokenizer:
 					split = self.find_suffix(substring)
 					suffixes.append(substring[split:])
 					substring = substring[:split]
-				elif self.find_infix(substring):
-					infixes = find_infix(substring)
+				elif self.find_infix(substring) is not None and len(self.find_infix(substring))>0:
+					infixes = self.find_infix(substring)
 					offset = 0
 					for match in infixes:
 						tokens.append(substring[offset : match.start()])
@@ -50,15 +51,15 @@ class GreekTokenizer:
 		return tokens
 	def find_infix(self, string):
 		if self.infix_finditer is None:
-			return 0
+			return []
 		return list(self.infix_finditer(string))
 	def find_prefix(self, string):
 		if (self.prefix_search is None):
-			return 0
+			return None
 		match = self.prefix_search(string)
-		return (match.end() - match.start()) if match is not None else 0
+		return (match.end() - match.start()) if match is not None else None
 	def find_suffix(self, string):
 		if (self.suffix_search is None):
-			return 0
+			return None
 		match = self.suffix_search(string)
-		return (match.end() - match.start()) if match is not None else 0
+		return (match.end() - match.start()) if match is not None else None
