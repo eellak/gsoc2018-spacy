@@ -22,6 +22,6 @@ TAG_MAP = {
 	"PRON": {POS: PRON},
 	"AUX": {POS: AUX},
 	"SPACE": {POS: SPACE},
-	"DET": {POS: DET}
+	"DET": {POS: DET},
 	"X" : {POS: X}
 }
