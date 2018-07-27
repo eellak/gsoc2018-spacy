@@ -1,0 +1,12 @@
+{
+    "name": "core_web_lg",
+    "lang": "el",
+    "version": "1.0.0",
+    "spacy_version": ">=2.0.0,<3.0.0",
+    "description": "Vocabulary, Syntax, Entities, Vectors",
+    "author": "Giannis Daras",
+    "email": "daras.giannhs@gmail.com",
+    "license": "MIT",
+    "pipeline": ["tagger", "parser", "ner"]
+}
+
