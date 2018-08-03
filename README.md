@@ -8,7 +8,7 @@ This project is developed for **Google Summer of Code 2018**, under the auspices
 
 ## Readme Contents
 
-1. [Problem Statement](#problem-statement - project goals)
+1. [Problem Statement](#problem-statement-and-project-goals)
 2. [Results](#results)
    * [OpenSource Text Analysis Tool - Demo](#demo)
    * [Integration of Greek language to spaCy](#integration-of-greek-language-to-spacy)
@@ -26,7 +26,7 @@ This project is developed for **Google Summer of Code 2018**, under the auspices
 
 
 
-## Problem statement - project goals 
+## Problem statement and project goals 
 
 We live in the era of data. **Every minute**, 3.8 billion internet users, produce content; more than 120 million emails , 500.000 Facebook comments, 3 million Google searches. If we want to process that amount of data efficiently, we need to process natural language. Open source projects such as spaCy, textblob, or NLTK contribute significantly to that direction and thus they need to be reinforced.
 
@@ -36,7 +36,7 @@ The **project goals** can be categorized as following:
 
 1. [Integration of Greek language](https://github.com/explosion/spaCy/pull/2558) to spaCy platform.  **Status: Complete**
 2. Production of models for Part-Of-Speech (POS) tagging, Dependency Analysis (DEP) and Named Entities Recognition (NER), with and without vectors.  **Status: Complete**
-3. An [open-source text analysis tool](nlp.wordgames.gr) (demo) in which everyone can perform common NLP tasks in 7 languages. **Status: Complete**.
+3. An [open-source text analysis tool](http://nlp.wordgames.gr) (demo) in which everyone can perform common NLP tasks in 7 languages. **Status: Complete**.
 
 
 
@@ -48,7 +48,7 @@ An open-source text analysis tool has been developed as a demonstration of the p
 
 The demo leverages [Spacy's](https://spacy.io)  capabilities to extract as much information as possible from a raw text. 
 
-**Experiment yourself with the demo**:  [nlp.wordgames.gr](www.nlp.wordgames.gr)
+**Experiment yourself with the demo**:  [nlp.wordgames.gr](http://nlp.wordgames.gr)
 
 Briefly, in this demo you can perform the following tasks with your text:
 
@@ -68,7 +68,7 @@ Text can either be provided or imported from a URL. Libraries used: [python read
 
 #### Demo links
 
-1. Demo itself: [nlp.wordgames.gr](www.nlp.wordgames.gr)
+1. Demo itself: [nlp.wordgames.gr](http://nlp.wordgames.gr)
 2. Demo code: [https://github.com/eellak/text-analysis](https://github.com/eellak/text-analysis)
 3. Demo wiki page: https://github.com/eellak/text-analysis/wiki
 
@@ -200,7 +200,7 @@ The final stop-words list can be found [here](https://github.com/explosion/spaCy
 
 >  **Lemmatization** usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma.
 
-The majority of the languages in spaCy are based on a lookup for lemmatization. That means, that most language models contain a static, huge file (usually called lookup.py or maybe lemmatizer.py) that contains a mapping of **all** of the words in the language to their lemma. The [author](https://github.com/giannisdaras.) believes that this approach lacks of scalability. The following section explains why.
+The majority of the languages in spaCy are based on a lookup for lemmatization. That means, that most language models contain a static, huge file (usually called lookup.py or maybe lemmatizer.py) that contains a mapping of **all** of the words in the language to their lemma. The [author](https://github.com/giannisdaras) believes that this approach lacks of scalability. The following section explains why.
 
 
 
