@@ -13,14 +13,14 @@ This project is developed for **Google Summer of Code 2018**, under the auspices
    * [OpenSource Text Analysis Tool - Demo](#demo)
    * [Integration of Greek language to spaCy](#integration-of-greek-language-to-spacy)
    * [Greek language models](#greek-language-models)
-   * [Empowerment of spaCy](empowerment-of-spacy)
+   * [Empowerment of spaCy](#empowerment-of-spacy)
 3. [Stop words](#stop-words)
 4. [Norm exceptions](#norm-exceptions)
 5. [Lemmatizer](#lemmatizer)
 6. [Contribute](#contribute)
 7. [Lexical Attributes](#lexical-attributes)
 8. [Models](#models)
-9. [Named Entities Recognition](#ner)
+9. [Named Entity Recognition](#named-entity-recognition)
 10. [Part of Speech Tags](#pos)
 11. [People](#people)
 
@@ -643,6 +643,37 @@ Following the name conventions mentioned above, two models have been trained for
   0.46625177182352695	
 
   As we expected, the first two sentences that are semantically close have high similarity score. Contrary to this, the first and the last sentence that talk about different topics have lower similarity score.
+
+
+
+## Named Entity Recognition
+
+A definition from [Wikipedia](https://en.wikipedia.org/wiki/Named-entity_recognition):
+
+> **Named-entity recognition** (**NER**) (also known as **entity
+> identification**, **entity chunking** and **entity extraction**) is
+> a subtask of [information extraction](https://en.wikipedia.org/wiki/Information_extraction) that
+> seeks to locate and classify [named entities](https://en.wikipedia.org/wiki/Named_entity) in text into
+> pre-defined categories such as the names of persons, organizations,
+> locations, expressions of times, quantities, monetary values,
+> percentages, etc. 
+
+
+
+### Named Entities for Greek language
+
+The Greek language models support a subset of the supported [spaCy
+built-in Named Entity
+Types](https://spacy.io/usage/linguistic-features#section-named-entities). 
+
+To be more specific, the following Named Entities Categories can be recognized by the Greek models:
+
+1. ORG: Companies, agencies, institutions, political parties, etc.
+2. PRODUCT: Objects, vehicles, foods, etc. 
+3. PERSON: People, including fictional.
+4. EVENT: Named hurricanes, battles, wars, sports events, etc.
+5. GPE: Countries, cities, states.
+6. LOC: Non-GPE locations, mountain ranges, bodies of water.
 
 
 
