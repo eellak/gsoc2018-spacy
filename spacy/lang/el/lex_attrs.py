@@ -1,14 +1,23 @@
-# coding: utf8
-from __future__ import unicode_literals
-import unicodedata
+# -*- coding: utf-8 -*-
 
-# import the symbols for the attrs you want to overwrite
+from __future__ import unicode_literals
+
 from ...attrs import LIKE_NUM
 
-
-
-# probably, without accents and with or without capitalization
-_num_words = ['ένα','δύο','δυο','τρία','τέσσερα','πέντε','έξι','επτά','οκτώ','εννέα','εκατομμύριο','δισεκατομμύριο','τρισεκατομμύριο','δις','χιλιάδες','χιλιάδα']
+_num_words = ['μηδέν', 'ένας', 'δυο', 'δυό', 'τρεις', 'τέσσερις', 'πέντε',
+              'έξι', 'εφτά', 'επτά', 'οκτώ', 'οχτώ',
+              'εννιά', 'εννέα', 'δέκα', 'έντεκα', 'ένδεκα', 'δώδεκα',
+              'δεκατρείς', 'δεκατέσσερις', 'δεκαπέντε', 'δεκαέξι', 'δεκαεπτά',
+              'δεκαοχτώ', 'δεκαεννέα', 'δεκαεννεα', 'είκοσι', 'τριάντα',
+              'σαράντα', 'πενήντα', 'εξήντα', 'εβδομήντα', 'ογδόντα',
+              'ενενήντα', 'εκατό', 'διακόσιοι', 'διακόσοι', 'τριακόσιοι',
+              'τριακόσοι', 'τετρακόσιοι', 'τετρακόσοι', 'πεντακόσιοι',
+              'πεντακόσοι', 'εξακόσιοι', 'εξακόσοι', 'εφτακόσιοι', 'εφτακόσοι',
+              'επτακόσιοι', 'επτακόσοι', 'οχτακόσιοι', 'οχτακόσοι',
+              'οκτακόσιοι', 'οκτακόσοι', 'εννιακόσιοι', 'χίλιοι', 'χιλιάδα',
+              'εκατομμύριο', 'δισεκατομμύριο', 'τρισεκατομμύριο', 'τετράκις',
+              'πεντάκις', 'εξάκις', 'επτάκις', 'οκτάκις', 'εννεάκις', 'ένα',
+              'δύο', 'τρία', 'τέσσερα', 'δις', 'χιλιάδες']
 
 
 def like_num(text):
@@ -19,22 +28,17 @@ def like_num(text):
         num, denom = text.split('/')
         if num.isdigit() and denom.isdigit():
             return True
-    if (text.count('^')==1):
-        num,denom=text.split('^')
-        if (num.isdigit() and denom.isdigit()):
-          return True
+    if text.count('^') == 1:
+        num, denom = text.split('^')
+        if num.isdigit() and denom.isdigit():
+            return True
+    if text.lower() in _num_words or text.lower().split(' ')[0] in _num_words:
+        return True
     if text in _num_words:
         return True
     return False
 
-def has_accents(text):
-  False if ( text==unicodedata.normalize('NFD',text) ) else True
-
-
-# The default lex_attr_getters are updated with this one, 
-# so only the functions defined here are overwritten.
 
 LEX_ATTRS = {
-    LIKE_NUM: like_num,
-    # HAS_ACCENTS: has_accents
+    LIKE_NUM: like_num
 }
