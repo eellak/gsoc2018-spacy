@@ -1,7 +1,6 @@
 # coding: utf8
 from __future__ import unicode_literals
 
-from .lookup import LOOKUP
 from ._adjectives import ADJECTIVES
 from ._adjectives_irreg import ADJECTIVES_IRREG
 from ._adverbs import ADVERBS
