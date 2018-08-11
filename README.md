@@ -12,20 +12,20 @@ This project is developed for **Google Summer of Code 2018**, under the auspices
 2. [Problem Statement](#problem-statement-and-project-goals)
 3. [Results](#results)
    * [Open Source Text Analysis Tool - Demo](#nlpbuddy-demo)
-   * [Integration of Greek language to spaCy](#integration-of-greek-language-to-spacy)
+   * [Integration of Greek language to spaCy](#addition-of-greek-language-to-spacy)
    * [Greek language models](#greek-language-models)
    * [Improvements in spaCy](#improvements-in-spacy)
 4. [Deliverables](#deliverables)
-   * [Tokenizer](#tokenizer)
-   * [Lemmatizer](#lemmatizer)
-   * [Sentence splitter](#sentence-splitter)
-   * [Stop words](#stop-words)
-   * [Norm exceptions](#norm-exceptions)
-   * [Lexical attributes](#lexical-attributes)
-   * [Part of Speech Tagger](#part-of-speech-tagger)
-   * [NER Tagger](#ner-tagger)
-   * [Sentiment Analyzer](#sentiment-analyzer)
-   * [Topic classifier](#topic-classifier)
+   * Tokenizer
+   * Lemmatizer
+   * Sentence splitter
+   * Stop words
+   * Norm exceptions
+   * Lexical attributes
+   * Part of Speech Tagger
+   * NER Tagger
+   * Sentiment Analyzer
+   * Topic classifier
 5. [Future work](#future-work)
 6. [People](#people)
 
@@ -427,7 +427,7 @@ In this section, some suggestions for future work are listed. There are difficul
 
 - Implement attitude detector and integrate it to demo (Difficulty: hard)
 
-- 
+
 
 ### People
 
