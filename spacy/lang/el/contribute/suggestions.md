@@ -1,20 +1,12 @@
-# About this file
-
-Hello reader! This file contains some ideas about improving or expanding the model of Greek language for spaCy.
+# Suggestions
 
 
-## Ideas list
 
-### Improving model:
-
-
-1. add more lemmas to lookup table (file: lemmatizer.py)
-2. add more norm exceptions (file: norm_exceptions.py)
-3. train pos_tagger with bigger datasets
-4. train ner with bigger datasets
-5. Add more tokenizer_exceptions
-6. Improve accuracy/speed of lemmas_neural
+This file is deprecated. While you read this, there is a contribute wiki page in which there are lots of suggestions for further development with difficulty labels assigned to each one of them.
 
 
-### Expanding model:
+
+For the up-to-date suggestions list, see [here](https://github.com/eellak/gsoc2018-spacy/wiki/Contribute).
+
+
 
