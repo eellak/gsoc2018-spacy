@@ -8,22 +8,26 @@ This project is developed for **Google Summer of Code 2018**, under the auspices
 
 ## Readme Contents
 
-1. [Project links](#links) 
+1. [Project links](#project-links) 
 2. [Problem Statement](#problem-statement-and-project-goals)
 3. [Results](#results)
-   * [Open Source Text Analysis Tool - Demo](#demo)
+   * [Open Source Text Analysis Tool - Demo](#nlpbuddy-demo)
    * [Integration of Greek language to spaCy](#integration-of-greek-language-to-spacy)
    * [Greek language models](#greek-language-models)
-   * [Empowerment of spaCy](#improvements-in-spacy)
-4. [Stop words](#stop-words)
-5. [Norm exceptions](#norm-exceptions)
-6. [Lemmatizer](#lemmatizer)
-7. [Contribute](#contribute)
-8. [Lexical Attributes](#lexical-attributes)
-9. [Models](#models)
-10. [Named Entity Recognition](#named-entity-recognition)
-11. [Part of Speech Tags](#pos)
-12. [People](#people)
+   * [Improvements in spaCy](#improvements-in-spacy)
+4. [Deliverables](#deliverables)
+   * [Tokenizer](#tokenizer)
+   * [Lemmatizer](#lemmatizer)
+   * [Sentence splitter](#sentence-splitter)
+   * [Stop words](#stop-words)
+   * [Norm exceptions](#norm-exceptions)
+   * [Lexical attributes](#lexical-attributes)
+   * [Part of Speech Tagger](#part-of-speech-tagger)
+   * [NER Tagger](#ner-tagger)
+   * [Sentiment Analyzer](#sentiment-analyzer)
+   * [Topic classifier](#topic-classifier)
+5. [Future work](#future-work)
+6. [People](#people)
 
 
 
@@ -105,7 +109,7 @@ Greek language models support most of the capabilities that you will find in the
 
 
 
-### NLPBuddy - An open source text analysis tool (demo)
+### NLPBuddy demo
 
 An open-source text analysis tool has been developed as a demonstration of the project results. 
 
