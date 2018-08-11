@@ -237,7 +237,7 @@ If you want to learn more, there is an individual page for each of them in the [
    [ Αυτή είναι μια πρόταση., Αυτή είναι μια δεύτερη πρόταση., Και αυτή μια τρίτη πρόταση.] 
    ````
 
-    
+   
    Submodule [link](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/sentence_splitter.py).
 
 4. Stop-words list.
@@ -413,9 +413,9 @@ In this section, some suggestions for future work are listed. There are difficul
 
 - Overwrite the spaCy tokenizer (Difficulty: hard)
 
-- Each language modifies the spaCy tokenization procedure by adding tokenizer exceptions. The tokenizer exceptions approach is not scalable for languages such as Greek. The reasons are pretty much the same as with the lemmatizer. A new approach, rule-based tokenization is proposed. The suggested steps are the following:
+  Each language modifies the spaCy tokenization procedure by adding tokenizer exceptions. The tokenizer exceptions approach is not scalable for languages such as Greek. The reasons are pretty much the same as with the lemmatizer. A new approach, rule-based tokenization is proposed. The suggested steps are the following:
 
-- 1. Rewrite the spaCy tokenizer in pure Python, following the pseudo-code provided here. This is already done, you can find the code [here](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/tokenizer.py).
+  1. Rewrite the spaCy tokenizer in pure Python, following the pseudo-code provided here. This is already done, you can find the code [here](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/tokenizer.py).
   2. Write regex expressions to catch the following phenomena of Greek language: "εκθλίψεις", "αφαιρέσεις", "αποκοπές".
   3. Transform the tokens that match one of the phenomena mentioned above, to other(s) tokens using transformation rules.
 
