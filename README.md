@@ -343,7 +343,7 @@ You can use this submodule having one of the produced greek models in order to 
   Sample output:
 
   ```
-   				αγόρασε
+   				        αγόρασε
   __________________|______
   |       |    |            άφησε
   |       |    |        ______|__________
