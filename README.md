@@ -398,9 +398,9 @@ Subjectivity: 16.666666666666664%
 Main emotion: surprise. Emotion score: 33.333333333333336%
 ```
 
-Currently available only for the Greek language.   Submodule [link](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/emotions.py). 
+Currently available only for the Greek language.   Submodule [link](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/emotions.py).
 
-12. Topic classifier.
+13. Topic classifier.
 
 This submodule is for text classification. It can categorize text in the following categories: Sports, Science, World News, Greek News, Environment, Politics, Art, Health, Science.  Currently available only for the Greek language. 
 
