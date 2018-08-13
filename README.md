@@ -21,9 +21,11 @@ This project is developed for **Google Summer of Code 2018**, under the auspices
    * Sentence splitter
    * Stop words
    * Norm exceptions
+   * Named Entities dataset
    * Lexical attributes
    * Part of Speech Tagger
    * NER Tagger
+   * Noun chunks
    * Sentiment Analyzer
    * Topic classifier
 5. [Future work](#future-work)
