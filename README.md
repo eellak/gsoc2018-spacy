@@ -181,24 +181,18 @@ Deliverables are independent functionality submodules or/and useful resources th
 
 A list of the deliverables and a short description of each of them follows. You can find the functionality submodules in the res/modules folder of the project repo ([here](https://github.com/eellak/gsoc2018-spacy/tree/5ca7746630a3a985da6ccfd48a51be74e8c7d44a/spacy/lang/el/res/modules)), serving as examples for usage. 
 
-Each of the deliverables is labelled with one of the following tags: **greek-spacy-support** , **nlp-task**, **resource**.
-
-- greek-spacy-support tag stands for modules that were required for the integration of Greek language to spaCy.
-- nlp-task stands for submodules that provide useful functionalities for some nlp task. Those modules may be implemented for more than one languages or only for Greek language.
-- resource is a tag that stands for useful resources for greek language that can be datasets that were created during the processs of integrating Greek language to spaCy.
-
 If you want to learn more, there is an individual page for each of them in the [project wiki](https://github.com/eellak/gsoc2018-spacy/wiki) or the [demo wiki](https://github.com/eellak/text-analysis/wiki). 
 
 ### Deliverables list
 
-1. Tokenizer **(greek-spacy-support) **
+1. Tokenizer
 
    You can use this submodule having one of the produced greek models in order to **split** your sentence(s) to **tokens**, independently of the others spaCy modules. 
    Sample input: *Θέλω να μου σπάσεις αυτήν την πρόταση σε κομμάτια*
    Sample output: *[Θέλω, να, μου, σπάσεις, αυτήν, την, πρόταση, σε, κομμάτια]* 
    Submodule [link](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/tokenizer.py). 
 
-2. Lemmatizer (**greek-spacy-support**) 
+2. Lemmatizer
 
    This submodule is for **sentences lemmatization**. 
 
@@ -221,7 +215,7 @@ If you want to learn more, there is an individual page for each of them in the [
    
    Greek lemmatizer is special because it follows a rule based approach. You can find extensive documentation about lemmatizer in the corresponding wiki [page](https://github.com/eellak/gsoc2018-spacy/wiki/Lemmatizer). Submodule [link](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/lemmatizer.py). 
 
-3. Sentence Splitter (**greek-spacy-support**) 
+3. Sentence Splitter
 
    You can use this submodule using one of the produced greek models in order to **split sentences** in a greek text independently of the rest of the spaCy modules. 
 
@@ -258,110 +252,114 @@ The stop-words wiki page is available [here.](https://github.com/eellak/gsoc201
 
 The norm-exceptions wiki page is available [here.](https://github.com/eellak/gsoc2018-spacy/wiki/Norm-exceptions) The final list with the stop-words of Greek language can be found [here](https://github.com/explosion/spaCy/blob/master/spacy/lang/el/norm_exceptions.py).
 
-6. Lexical attributes functions.
+6. Named Entities dataset.
 
-   
+   For Greek language, there was no available dataset for Named Entities. So, we had to create our own annotated dataset using Prodigy. The annotated dataset is available [here](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/training/datasets/annotated_data/ner.jsonl).  You can learn more about NER and Prodigy in the following links: [Link 1](https://github.com/eellak/gsoc2018-spacy/wiki/NER), [Link 2](https://github.com/eellak/gsoc2018-spacy/wiki/Prodigy). 
 
-   Each token of a spaCy doc is checked against some potential attributes. In this way, **urls, nums and other types of special tokens** can be **seperated** from the normal tokens. 
+7. Lexical attributes functions.
 
-   
 
-   Sample input:
 
-   ```
-    Η ιστοσελίδα για το demo μας είναι: https://nlp.wordames.gr 
-   ```
+Each token of a spaCy doc is checked against some potential attributes. In this way, **urls, nums and other types of special tokens** can be **seperated** from the normal tokens. 
 
-   Sample output:
 
-   ```
-   Url: https://nlp.wordames.gr 
-   ```
 
-   Submodule [link](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/lexical_attrs.py). 
+Sample input:
 
-7. Part of Speech Tagger.
+```
+ Η ιστοσελίδα για το demo μας είναι: https://nlp.wordames.gr 
+```
 
-   You can use this submodule having one of the produced greek models in order to get **part of speech tags for your tokens**, independently of the others spaCy modules. 
+Sample output:
 
-   Sample input:
+```
+Url: https://nlp.wordames.gr 
+```
 
-   ```
-   Η δημοκρατία είναι το πιο ανθρώπινο πολίτευμα. 
-   ```
+Submodule [link](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/lexical_attrs.py). 
 
-   Sample output:
+8. Part of Speech Tagger.
 
-   ```
-   Token: Η Tag: DET
-       Token: δημοκρατία Tag: NOUN
-       Token: είναι Tag: AUX
-       Token: το Tag: DET
-       Token: πιο Tag: ADV
-       Token: ανθρώπινο Tag: ADJ
-       Token: πολίτευμα Tag: NOUN
-       Token: . Tag: PUNCT
-   ```
+You can use this submodule having one of the produced greek models in order to get **part of speech tags for your tokens**, independently of the others spaCy modules. 
 
-   
+Sample input:
+
+```
+Η δημοκρατία είναι το πιο ανθρώπινο πολίτευμα. 
+```
+
+Sample output:
+
+```
+Token: Η Tag: DET
+Token: δημοκρατία Tag: NOUN
+Token: είναι Tag: AUX
+Token: το Tag: DET
+Token: πιο Tag: ADV
+Token: ανθρώπινο Tag: ADJ
+Token: πολίτευμα Tag: NOUN
+Token: . Tag: PUNCT
+```
+
+
 
 Visualized output using displaCy:
 
 ![](http://www.nlpbuddy.io/static/img/gsoc-images/pos.png)
 
-8. DEP Tagger.
+9. DEP Tagger.
 
-   You can use this submodule having one of the produced greek models in order to **analyze syntax** of your text, independently of the others spaCy modules. 
+You can use this submodule having one of the produced greek models in order to **analyze syntax** of your text, independently of the others spaCy modules. 
 
-   * Get DEP tags.
+* Get DEP tags.
 
-     Sample input:
+  Sample input:
 
-     ```
-     Η δημοκρατία είναι το πιο ανθρώπινο πολίτευμα.
-     ```
+  ```
+  Η δημοκρατία είναι το πιο ανθρώπινο πολίτευμα.
+  ```
 
-     Sample output:
+  Sample output:
 
-     ```
-     Token:η, DEP tag: det
-     Token:δημοκρατία, DEP tag: nsubj
-     Token:είναι, DEP tag: cop
-     Token:το, DEP tag: det
-     Token:πιο, DEP tag: advmod
-     Token:ανθρώπινο, DEP tag: amod
-     Token:πολίτευμα, DEP tag: ROOT
-     Token:., DEP tag: punct
-     ```
+  ```
+  Token:η, DEP tag: det
+  Token:δημοκρατία, DEP tag: nsubj
+  Token:είναι, DEP tag: cop
+  Token:το, DEP tag: det
+  Token:πιο, DEP tag: advmod
+  Token:ανθρώπινο, DEP tag: amod
+  Token:πολίτευμα, DEP tag: ROOT
+  Token:., DEP tag: punct
+  ```
 
-   * Navigate/Visualize the DEP tree.
+* Navigate/Visualize the DEP tree.
 
-     Sample input:
+  Sample input:
 
-     ```
-     Ο Κώστας αγόρασε πατάτες και τις άφησε πάνω στο ψυγείο. 
-     ```
+  ```
+  Ο Κώστας αγόρασε πατάτες και τις άφησε πάνω στο ψυγείο. 
+  ```
 
-     Sample output:
+  Sample output:
 
-     ```
-      				αγόρασε
-     __________________|______
-     |       |    |            άφησε
-     |       |    |        ______|__________
-     |       |  Κώστας    |      |    |   ψυγείο
-     |       |    |       |      |    |     |
-     πατάτες .    Ο      και    τις  πάνω  στο
-         
-     ```
+  ```
+   				αγόρασε
+  __________________|______
+  |       |    |            άφησε
+  |       |    |        ______|__________
+  |       |  Κώστας    |      |    |   ψυγείο
+  |       |    |       |      |    |     |
+  πατάτες .    Ο      και    τις  πάνω  στο
+      
+  ```
 
-     Visualization code [source](https://stackoverflow.com/questions/36610179/how-to-get-the-dependency-tree-with-spacy). 
+  Visualization code [source](https://stackoverflow.com/questions/36610179/how-to-get-the-dependency-tree-with-spacy). 
 
-     Submodule [link.](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/dep.py)
+  Submodule [link.](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/dep.py)
 
-9. NER Tagger.
+10. NER Tagger.
 
-   ![](http://www.nlpbuddy.io/static/img/gsoc-images/ner.png)
+![](http://www.nlpbuddy.io/static/img/gsoc-images/ner.png)
 
 > Named-entity recognition (NER) (also known as entity identification, entity chunking and entity extraction) is a subtask of information extraction that seeks to locate and classify named entities in text into pre-defined categories such as the names of persons, organizations, locations, expressions of times, quantities, monetary values, percentages, etc.
 
@@ -375,7 +373,15 @@ Visualization using displacy:
 
 For extensive documentation of NER tagger for Greek language, check the corresponding wiki [page](https://github.com/eellak/gsoc2018-spacy/wiki/NER). Submodule [link](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/ents.py).
 
-10. Sentiment analyzer.
+11. Noun chunks.
+
+    >Noun chunks are "base noun phrases" – flat phrases that have a noun as their head. You can think of noun chunks as a noun plus the words describing the noun – for example, "the lavish green grass" or "the world's largest tech fund".
+
+    In the latest [pull request](https://github.com/explosion/spaCy/pull/2658) noun chunks for Greek language are supported. 
+
+    You can view the submodule [here](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/noun_chunks.py).
+
+11. Sentiment analyzer.
 
 This submodule gives you a **subjectivity score** for your text and an **emotion analysis** . 
 
@@ -394,9 +400,9 @@ Main emotion: surprise. Emotion score: 33.333333333333336%
 
 Currently available only for the Greek language.   Submodule [link](https://github.com/eellak/gsoc2018-spacy/blob/dev/spacy/lang/el/res/modules/emotions.py). 
 
-11. Topic classifier.
+12. Topic classifier.
 
-    This submodule is for text classification. It can categorize text in the following categories: Sports, Science, World News, Greek News, Environment, Politics, Art, Health, Science.  Currently available only for the Greek language. 
+This submodule is for text classification. It can categorize text in the following categories: Sports, Science, World News, Greek News, Environment, Politics, Art, Health, Science.  Currently available only for the Greek language. 
 
 
 
