@@ -133,6 +133,8 @@ Briefly, in this demo you can perform the following tasks with your text:
    * **Text classification** among the following categories: Sports, Science, World News, Greek News, Environment, Politics, Art, Health, Science. The Greek classifier is built with [FastText](https://fasttext.cc) and is trained in 20.000 articles labeled in these categories. **Accuracy reaches 90%**,
    * **Text subjectivity analysis**.
    * **Emotion analysis**. It detects the main text emotion among the following emotions: Anger, Disgust, Fear, Happiness, Sadness, Surprise.
+10. Lexical attributes. Find numerals, urls and emails.
+11. Noun chunks. Get the noun phrases of the text such as "the red bicycle".
 
 Currently, it supports the features mentioned above for text in one of the following languages: Greek, English, German, Spanish, Portuguese, French, Italian and Dutch. 
 
